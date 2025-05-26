@@ -544,18 +544,41 @@ section:target::before {
 }
 
 /* ---------- Reels ---------- */
-.reel-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+/* ver 1 */
+#reels {
+  background: #f8f8f8;
+  border-radius: 20px;
+  padding: 60px 20px;
 }
-.reel-grid iframe {
+#reels h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.myReelSwiper {
   width: 100%;
-  max-width: 500px;
-  height: 280px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.swiper-slide video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
+}
+.reel-caption {
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+.swiper-pagination {
+  margin-top: 20px;
+  text-align: center;
 }
 
 /* ---------- Skills ---------- */

@@ -15,9 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4/turn.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
@@ -44,7 +48,7 @@
       </ul>
     </nav>
 
-    <!-- hero ver 1 section -->
+    <!-- hero ver 1 -->
     <header class="hero-grid">
       <div class="hero-text">
         <h1>Hello there,</h1>
@@ -116,16 +120,24 @@
 
       <!-- Right Card -->
       <div class="hero-v3-right">
-        <p class="hero-v3-role">Digital Marketer & Visual Storyteller</p>
+        <p class="hero-v3-role">
+          Digital Marketer & <br />
+          Visual Storyteller
+        </p>
         <p class="hero-v3-location">
-          Based in Malaysia, I have several years of experience in brand
-          content, strategy, and digital marketing. I've helped brands shine
-          across digital channels with meaningful storytelling.
+          I am Shermin Soo, a versatile Marketer with a proven track record in
+          Digital Content Creation and Project Marketing. Well-versed in
+          optimising brand visibility, fostering collaboration across teams and
+          vendors, and driving meaningful growth in hospitality and real estate
+          industries.
         </p>
         <div class="hero-v3-socials">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-behance"></i></a>
+          <a href="http://linkedin.com/in/shermin-soo" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://www.instagram.com/sherminsoo/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
         <a href="#contact" class="hero-v3-btn contact">Contact Me</a>
       </div>
@@ -133,7 +145,7 @@
 
     <!-- about section -->
     <section id="about" data-aos="fade-up" data-aos-delay="200">
-      <h2>About Me</h2>
+      <h2>About Me (Developing)</h2>
       <p>
         I am Shermin Soo, a versatile Marketer with a proven track record in
         Digital Content Creation and Project Marketing. Well-versed in
@@ -145,7 +157,7 @@
 
     <!-- gallery style 1 - mansory -->
     <section id="photography" data-aos="zoom-in-up" data-aos-delay="300">
-      <h2>Photography</h2>
+      <h2>Films Photography (Ver 1)</h2>
       <div class="gallery-filters">
         <button onclick="filterGallery('all')">All</button>
         <button onclick="filterGallery('portrait')">Portrait</button>
@@ -157,7 +169,7 @@
 
     <!-- gallery style 2 -->
     <section id="recent-work" class="recent-work-section">
-      <h2>Recent Work</h2>
+      <h2>Films Photography (Ver 2)</h2>
       <div class="recent-work-scroll" id="recentWorkContainer"></div>
     </section>
 
@@ -170,26 +182,20 @@
       <span class="nav-arrow nav-right">&#10095;</span>
     </div>
 
-    <!-- reels -->
-    <section id="reels" data-aos="flip-left" data-aos-delay="400">
-      <h2>Edited Reels</h2>
-      <div class="reel-grid">
-        <iframe
-          src="https://www.youtube.com/embed/ScMzIvxBSi4"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/TX9qSaGXFyg"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+    <!-- reels ver 1 -->
+    <section id="reels" data-aos="zoom-in-up" data-aos-delay="300">
+      <h2>Edited Reels (Developing)</h2>
+      <div class="swiper myReelSwiper">
+        <div class="swiper-wrapper">
+          <!-- Slides will be injected via JS from reels.json -->
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
 
     <!-- skills -->
     <section id="skills" data-aos="fade-right" data-aos-delay="500">
-      <h2>Marketing & Creative Skills</h2>
+      <h2>Marketing & Creative Skills (Can remove or keep)</h2>
       <ul>
         <li>Brand Strategy</li>
         <li>Content Creation</li>
@@ -201,7 +207,7 @@
 
     <!-- contact -->
     <section id="contact" data-aos="fade-up" data-aos-delay="600">
-      <h2>Let's make something amazing together!</h2>
+      <h2>Let's make something amazing together! (Can remove or keep)</h2>
       <p>
         Email:
         <a href="mailto:sherminsys519@gmail.com">sherminsys519@gmail.com</a>
@@ -215,9 +221,9 @@
     </section>
 
     <!-- footer -->
-    <footer>
+    <!-- <footer>
       <p>&copy; 2025 Shermin Soo. All rights reserved.</p>
-    </footer>
+    </footer> -->
 
     <!-- glow cursor -->
     <div class="glow-cursor" id="glowCursor"></div>
@@ -365,6 +371,61 @@
           }
         });
       }
+
+      // Load and initialize Swiper with video autoplay control
+      let swiper; // define swiper in outer scope
+      fetch("reels.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const swiperWrapper = document.querySelector(
+            ".myReelSwiper .swiper-wrapper"
+          );
+          swiperWrapper.innerHTML = "";
+
+          data.forEach((reel) => {
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
+            slide.innerHTML = `
+          <video controls title="${reel.title}">
+            <source src="${reel.src}" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p class="reel-caption">${reel.title}</p>
+        `;
+            swiperWrapper.appendChild(slide);
+          });
+
+          // ✅ Initialize Swiper once here
+          swiper = new Swiper(".myReelSwiper", {
+            loop: false,
+            pagination: { el: ".swiper-pagination" },
+            autoplay: { delay: 3000 },
+            spaceBetween: 20,
+            breakpoints: {
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            },
+          });
+
+          // ✅ Stop autoplay on video play
+          document.addEventListener(
+            "play",
+            function (e) {
+              if (e.target.tagName === "VIDEO") swiper.autoplay.stop();
+            },
+            true
+          );
+
+          // ✅ Resume autoplay on video pause
+          document.addEventListener(
+            "pause",
+            function (e) {
+              if (e.target.tagName === "VIDEO") swiper.autoplay.start();
+            },
+            true
+          );
+        });
 
       // fetch gallery.json for photography
       fetch("gallery.json")
