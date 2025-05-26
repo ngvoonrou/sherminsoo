@@ -26,20 +26,18 @@ section {
   padding: 80px 40px;
   max-width: 1400px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-section:target::before {
-  content: "";
-  display: block;
-  height: 80px; /* height of your nav + spacing */
-  margin-top: -80px;
+  align-content: center;
 }
 @media (max-width: 600px) {
   section {
     padding: 60px 20px;
   }
+}
+#photography,
+#reels,
+#contact {
+  background: #f4f4f4;
+  overflow-x: auto;
 }
 
 /* Make all hero versions take full viewport height */
@@ -407,12 +405,6 @@ section:target::before {
 }
 
 /* gallery v2 */
-.recent-work-section {
-  background: #f4f4f4;
-  border-radius: 18px;
-  overflow-x: auto;
-  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.1);
-}
 .recent-work-scroll {
   display: flex;
   gap: 30px;
@@ -545,40 +537,86 @@ section:target::before {
 
 /* ---------- Reels ---------- */
 /* ver 1 */
-#reels {
-  background: #f8f8f8;
-  border-radius: 20px;
-  padding: 60px 20px;
-}
-#reels h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.myReelSwiper {
-  width: 100%;
-  padding: 20px;
+.reels-wrapper {
   display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.reels-left {
+  flex: 0 0 300px;
+}
+#reels-main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.3;
+}
+.reels-slider-container {
+  flex: 1 1 0;
+  position: relative;
+  max-width: 1000px;
+  overflow: hidden;
+}
+.reels-swiper .swiper-wrapper {
+  display: flex;
   align-items: center;
 }
-.swiper-slide video {
+.reels-swiper .swiper-slide {
+  width: 260px;
+  height: 360px;
+  background: #222;
+  color: white;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: transform 0.4s ease, opacity 0.3s;
+  text-align: center;
+  scroll-snap-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.reels-swiper .swiper-slide.swiper-slide-active {
+  transform: scale(1.1);
+  background: #333;
+}
+.reels-nav-btn {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+}
+.reel-video {
   width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  margin-bottom: 12px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
 }
-.reel-caption {
-  font-weight: 500;
-  font-size: 0.95rem;
-  text-align: center;
-  color: #444;
-  margin-bottom: 20px;
-  max-width: 90%;
+.reels-swiper .swiper-button-next {
+  right: -20px;
 }
-.swiper-pagination {
-  margin-top: 20px;
-  text-align: center;
+.reels-swiper .swiper-button-prev {
+  left: -20px;
+}
+@media (max-width: 768px) {
+  .reels-wrapper {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .reels-left {
+    text-align: center;
+  }
 }
 
 /* ---------- Skills ---------- */

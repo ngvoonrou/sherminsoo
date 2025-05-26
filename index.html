@@ -144,7 +144,7 @@
     </header>
 
     <!-- about section -->
-    <section id="about" data-aos="fade-up" data-aos-delay="200">
+    <section id="about">
       <h2>About Me (Developing)</h2>
       <p>
         I am Shermin Soo, a versatile Marketer with a proven track record in
@@ -156,7 +156,7 @@
     </section>
 
     <!-- gallery style 1 - mansory -->
-    <section id="photography" data-aos="zoom-in-up" data-aos-delay="300">
+    <section id="photography">
       <h2>Films Photography (Ver 1)</h2>
       <div class="gallery-filters">
         <button onclick="filterGallery('all')">All</button>
@@ -183,18 +183,29 @@
     </div>
 
     <!-- reels ver 1 -->
-    <section id="reels" data-aos="zoom-in-up" data-aos-delay="300">
-      <h2>Edited Reels (Developing)</h2>
-      <div class="swiper myReelSwiper">
-        <div class="swiper-wrapper">
-          <!-- Slides will be injected via JS from reels.json -->
+    <section id="reels">
+      <h2>Reels (Developing)</h2>
+      <div class="reels-wrapper">
+        <div class="reels-left">
+          <h2 id="reels-main-title">Loading...</h2>
         </div>
-        <div class="swiper-pagination"></div>
+
+        <div class="reels-slider-container">
+          <div class="swiper reels-swiper">
+            <div class="swiper-wrapper" id="reelsSlides">
+              <!-- Slides will be injected dynamically -->
+            </div>
+
+            <!-- Navigation arrows -->
+            <div class="swiper-button-prev reels-nav-btn"></div>
+            <div class="swiper-button-next reels-nav-btn"></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- skills -->
-    <section id="skills" data-aos="fade-right" data-aos-delay="500">
+    <section id="skills">
       <h2>Marketing & Creative Skills (Can remove or keep)</h2>
       <ul>
         <li>Brand Strategy</li>
@@ -206,7 +217,7 @@
     </section>
 
     <!-- contact -->
-    <section id="contact" data-aos="fade-up" data-aos-delay="600">
+    <section id="contact">
       <h2>Let's make something amazing together! (Can remove or keep)</h2>
       <p>
         Email:
@@ -220,8 +231,9 @@
       </p>
     </section>
 
+    <!-- dev noted - to be removed -->
     <section id="devNotes">
-      <!-- Developer Note Section (For Review Only) -->
+      <h1>Notes (to be removed)</h1>
       <div class="dev-note">
         <h4>For Ahsam Review</h4>
         <ul>
@@ -236,6 +248,7 @@
           <li>
             Will develop start with dekstop size first, mobile responsive soon
           </li>
+          <li>Planned to add a project section as well.</li>
           <li>Let me know if you have any idea</li>
         </ul>
       </div>
@@ -244,7 +257,7 @@
         <h4>Clarification</h4>
         <ul>
           <li>
-            Any must included to sections? (Films photography, reels showcase,
+            Any must included sections? (Films photography, reels showcase,
             project based showcase?)
           </li>
           <li>Any preferable way to showcase those contents?</li>
@@ -410,59 +423,66 @@
         });
       }
 
-      // Load and initialize Swiper with video autoplay control
-      let swiper; // define swiper in outer scope
+      // Dynamically load reels.json and render titles
+      let swiperInstance;
+
       fetch("reels.json")
         .then((res) => res.json())
         .then((data) => {
-          const swiperWrapper = document.querySelector(
-            ".myReelSwiper .swiper-wrapper"
-          );
-          swiperWrapper.innerHTML = "";
+          const slidesContainer = document.getElementById("reelsSlides");
+          const titleBox = document.getElementById("reels-main-title");
 
           data.forEach((reel) => {
             const slide = document.createElement("div");
             slide.className = "swiper-slide";
             slide.innerHTML = `
-          <video controls title="${reel.title}">
-            <source src="${reel.src}" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <p class="reel-caption">${reel.title}</p>
-        `;
-            swiperWrapper.appendChild(slide);
+        <video 
+          src="${reel.src}" 
+          muted 
+          playsinline 
+          preload="metadata" 
+          class="reel-video"
+        ></video>
+      `;
+            slidesContainer.appendChild(slide);
           });
 
-          // ✅ Initialize Swiper once here
-          swiper = new Swiper(".myReelSwiper", {
-            loop: false,
-            pagination: { el: ".swiper-pagination" },
-            autoplay: { delay: 3000 },
-            spaceBetween: 20,
-            breakpoints: {
-              0: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
+          swiperInstance = new Swiper(".reels-swiper", {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            on: {
+              init: function () {
+                playVideo(this);
+                titleBox.textContent = data[this.realIndex].title;
+              },
+              slideChangeTransitionEnd: function () {
+                playVideo(this);
+                titleBox.textContent = data[this.realIndex].title;
+              },
             },
           });
 
-          // ✅ Stop autoplay on video play
-          document.addEventListener(
-            "play",
-            function (e) {
-              if (e.target.tagName === "VIDEO") swiper.autoplay.stop();
-            },
-            true
-          );
+          function playVideo(swiper) {
+            const allVideos = document.querySelectorAll(".reel-video");
+            allVideos.forEach((v) => {
+              v.pause();
+              v.currentTime = 0;
+            });
 
-          // ✅ Resume autoplay on video pause
-          document.addEventListener(
-            "pause",
-            function (e) {
-              if (e.target.tagName === "VIDEO") swiper.autoplay.start();
-            },
-            true
-          );
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            const video = activeSlide.querySelector("video");
+            if (video) {
+              video.play().catch((err) => {
+                console.log("Autoplay failed", err);
+              });
+            }
+          }
         });
 
       // fetch gallery.json for photography
