@@ -618,3 +618,26 @@ footer {
   color: #888;
   font-size: 0.9em;
 }
+
+/* dev notes */
+.dev-note {
+  background-color: #fff8dc;
+  border-left: 4px solid #ff9800;
+  padding: 15px 20px;
+  margin: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.dev-note h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+.dev-note ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.dev-note li {
+  margin-bottom: 5px;
+}
