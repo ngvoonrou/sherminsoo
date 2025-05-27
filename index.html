@@ -4,26 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shermin Soo | Portfolio</title>
+
+    <!-- Fonts & Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <!-- navigation bar -->
     <nav class="bottom-nav">
@@ -187,7 +191,9 @@
       <h2>Reels (Developing)</h2>
       <div class="reels-wrapper">
         <div class="reels-left">
+          <small id="reels-type" class="reels-type"></small>
           <h2 id="reels-main-title">Loading...</h2>
+          <span id="reels-subtitle" class="reels-subtitle"></span>
         </div>
 
         <div class="reels-slider-container">
@@ -200,36 +206,9 @@
       </div>
     </section>
 
-    <!-- skills -->
-    <section id="skills">
-      <h2>Marketing & Creative Skills (Can remove or keep)</h2>
-      <ul>
-        <li>Brand Strategy</li>
-        <li>Content Creation</li>
-        <li>Social Media Campaigns</li>
-        <li>Photography & Editing</li>
-        <li>Video Editing & Reels</li>
-      </ul>
-    </section>
-
-    <!-- contact -->
-    <section id="contact">
-      <h2>Let's make something amazing together! (Can remove or keep)</h2>
-      <p>
-        Email:
-        <a href="mailto:sherminsys519@gmail.com">sherminsys519@gmail.com</a>
-      </p>
-      <p>
-        <i class="fab fa-instagram"></i>
-        <a href="https://instagram.com/sherminsoo" target="_blank"
-          >@sherminsoo</a
-        >
-      </p>
-    </section>
-
     <!-- dev noted - to be removed -->
     <section id="devNotes">
-      <h1>Notes (to be removed)()</h1>
+      <h1>Notes (to be removed)</h1>
       <div class="dev-note">
         <h4>For Ahsam Review</h4>
         <ul>
@@ -275,223 +254,11 @@
     <!-- glow cursor -->
     <div class="glow-cursor" id="glowCursor"></div>
 
-    <script>
-      // glow cursor
-      const glow = document.getElementById("glowCursor");
-      document.addEventListener("mousemove", (e) => {
-        glow.style.left = `${e.clientX}px`;
-        glow.style.top = `${e.clientY}px`;
-      });
+    <!-- Libraries -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-      // animation
-      AOS.init({
-        once: true,
-        duration: 1000,
-        offset: 100,
-        easing: "ease-in-out",
-      });
-
-      // type animation
-      document.addEventListener("DOMContentLoaded", function () {
-        new Typed("#typed-text-1", {
-          strings: [
-            "Helping brands connect deeply through compelling digital narratives, visual identity, and strategy.",
-          ],
-          typeSpeed: 35,
-          startDelay: 300,
-          backSpeed: 0,
-          backDelay: 500,
-          loop: false,
-          showCursor: false,
-        });
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        new Typed("#typed-text-2", {
-          strings: [
-            "Helping brands connect deeply through compelling digital narratives, visual identity, and strategy.",
-          ],
-          typeSpeed: 35,
-          startDelay: 300,
-          backSpeed: 0,
-          backDelay: 500,
-          loop: false,
-          showCursor: false,
-        });
-      });
-
-      // render gallery photography
-      function renderGallery(images) {
-        const gallery = document.getElementById("masonryGallery");
-        gallery.innerHTML = "";
-        images.forEach((img) => {
-          const div = document.createElement("div");
-          div.className = `gallery-item ${img.category}`;
-          div.innerHTML = `<img src="${img.src}" alt="${img.title}">`;
-          gallery.appendChild(div);
-        });
-      }
-
-      // filter gallery buttons
-      function filterGallery(category) {
-        const items = document.querySelectorAll(".gallery-item");
-        items.forEach((item) => {
-          item.style.display =
-            category === "all" || item.classList.contains(category)
-              ? "block"
-              : "none";
-        });
-      }
-
-      // recent work
-      function renderRecentWork(data) {
-        const container = document.getElementById("recentWorkContainer");
-        container.innerHTML = "";
-        data.forEach((item, index) => {
-          const div = document.createElement("div");
-          div.className = "recent-work-item";
-          div.innerHTML = `
-            <img src="${item.src}" alt="${item.title}" />
-            <div class="photo-meta">
-              <div class="photo-index">/ ${String(index + 1).padStart(
-                2,
-                "0"
-              )}</div>
-              <div class="photo-info">
-                <div class="photo-title">${item.title}</div>
-                <div class="photo-year">${item.year}</div>
-              </div>
-            </div>
-          `;
-          container.appendChild(div);
-        });
-      }
-
-      // function for gallery image modal
-      function enableImageModal() {
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImg");
-        const modalCaption = document.getElementById("modalCaption");
-        const closeBtn = document.querySelector(".close");
-        const navLeft = document.querySelector(".nav-left");
-        const navRight = document.querySelector(".nav-right");
-
-        const allImages = Array.from(
-          document.querySelectorAll(
-            ".masonry-gallery img, .recent-work-item img"
-          )
-        );
-        let currentIndex = -1;
-
-        allImages.forEach((img, i) => {
-          img.style.cursor = "zoom-in";
-          img.addEventListener("click", () => {
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            modalCaption.innerText = img.alt;
-            currentIndex = i;
-          });
-        });
-
-        closeBtn.addEventListener("click", () => {
-          modal.style.display = "none";
-        });
-
-        navLeft.addEventListener("click", () => {
-          if (currentIndex > 0) {
-            currentIndex--;
-            modalImg.src = allImages[currentIndex].src;
-            modalCaption.innerText = allImages[currentIndex].alt;
-          }
-        });
-
-        navRight.addEventListener("click", () => {
-          if (currentIndex < allImages.length - 1) {
-            currentIndex++;
-            modalImg.src = allImages[currentIndex].src;
-            modalCaption.innerText = allImages[currentIndex].alt;
-          }
-        });
-
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.style.display = "none";
-          }
-        });
-      }
-
-      // Dynamically load reels.json and render titles
-      let swiperInstance;
-
-      fetch("reels.json")
-        .then((res) => res.json())
-        .then((data) => {
-          const slidesContainer = document.getElementById("reelsSlides");
-          const titleBox = document.getElementById("reels-main-title");
-
-          data.forEach((reel) => {
-            const slide = document.createElement("div");
-            slide.className = "swiper-slide";
-            slide.innerHTML = `
-        <video 
-          src="${reel.src}" 
-          muted 
-          playsinline 
-          preload="metadata" 
-          class="reel-video"
-        ></video>
-      `;
-            slidesContainer.appendChild(slide);
-          });
-
-          swiperInstance = new Swiper(".reels-swiper", {
-            slidesPerView: "auto",
-            spaceBetween: 30,
-            centeredSlides: true,
-            loop: true,
-            on: {
-              init: function () {
-                playVideo(this);
-                titleBox.textContent = data[this.realIndex].title;
-              },
-              slideChangeTransitionEnd: function () {
-                playVideo(this);
-                titleBox.textContent = data[this.realIndex].title;
-              },
-            },
-          });
-
-          function playVideo(swiper) {
-            const allVideos = document.querySelectorAll(".reel-video");
-            allVideos.forEach((v) => {
-              v.pause();
-              v.currentTime = 0;
-            });
-
-            const activeSlide = swiper.slides[swiper.activeIndex];
-            const video = activeSlide.querySelector("video");
-            if (video) {
-              video.play().catch((err) => {
-                console.log("Autoplay failed", err);
-              });
-            }
-          }
-        });
-
-      // fetch gallery.json for photography
-      fetch("gallery.json")
-        .then((res) => res.json())
-        .then((data) => {
-          renderGallery(data);
-          enableImageModal();
-        });
-
-      // fetch galley.json for recent work photography
-      fetch("gallery.json")
-        .then((res) => res.json())
-        .then((data) => {
-          renderRecentWork(data);
-          enableImageModal();
-        });
-    </script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
