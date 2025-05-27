@@ -415,6 +415,7 @@ section {
 }
 .recent-work-scroll::-webkit-scrollbar {
   height: 4px;
+  background: #e0dedb;
 }
 .recent-work-scroll::-webkit-scrollbar-track {
   background: transparent;
@@ -560,13 +561,9 @@ section {
   max-width: 1000px;
   overflow: hidden;
 }
-.reels-swiper .swiper-wrapper {
-  display: flex;
-  align-items: center;
-}
 .reels-swiper .swiper-slide {
   width: 260px;
-  height: 360px;
+  height: 400px;
   background: #222;
   color: white;
   border-radius: 14px;
@@ -580,21 +577,15 @@ section {
   scroll-snap-align: center;
   position: relative;
   overflow: hidden;
+  opacity: 0.5;
+  transform: scale(0.9);
+  z-index: 0;
 }
 .reels-swiper .swiper-slide.swiper-slide-active {
-  transform: scale(1.1);
-  background: #333;
-}
-.reels-nav-btn {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 14px;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  z-index: 10;
-  cursor: pointer;
+  opacity: 1;
+  transform: scale(1.15);
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 .reel-video {
   width: 100%;

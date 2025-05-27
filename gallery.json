@@ -2,66 +2,79 @@
   {
     "category": "landscape",
     "src": "assets/films/landscape/Hualien.jpg",
-    "title": "Hua Lien"
+    "title": "Hua Lien",
+    "year": 2021
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/Nam Cheong 1.jpeg",
-    "title": "Nam Cheong"
+    "title": "Nam Cheong",
+    "year": 2021
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/Nam Cheong 1.jpeg",
-    "title": "Nam Cheong"
+    "title": "Nam Cheong",
+    "year": 2021
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/Sai Wan.jpg",
-    "title": "Sai Wan"
+    "title": "Sai Wan",
+    "year": 2025
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/West Kowloon.jpeg",
-    "title": "West Kowloon"
+    "title": "West Kowloon",
+    "year": 2025
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Asakusa.jpg",
-    "title": "Asakusa"
+    "title": "Asakusa",
+    "year": 2025
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Fujisan 2.jpg",
-    "title": "Fujisan"
+    "title": "Fujisan",
+    "year": 2025
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Fujisan.jpg",
-    "title": "Fujisan"
+    "title": "Fujisan",
+    "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 1.jpeg",
-    "title": "Hoi An"
+    "title": "Hoi An",
+    "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 2.jpeg",
-    "title": "Hoi An"
+    "title": "Hoi An",
+    "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 3.jpeg",
-    "title": "Hoi An"
+    "title": "Hoi An",
+    "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 4.jpg",
-    "title": "Hoi An"
+    "title": "Hoi An",
+    "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 5.jpg",
-    "title": "Hoi An 2"
+    "title": "Hoi An 2",
+    "year": 2024
   }
 ]

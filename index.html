@@ -20,7 +20,7 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
@@ -195,10 +195,6 @@
             <div class="swiper-wrapper" id="reelsSlides">
               <!-- Slides will be injected dynamically -->
             </div>
-
-            <!-- Navigation arrows -->
-            <div class="swiper-button-prev reels-nav-btn"></div>
-            <div class="swiper-button-next reels-nav-btn"></div>
           </div>
         </div>
       </div>
@@ -237,13 +233,13 @@
       <div class="dev-note">
         <h4>For Ahsam Review</h4>
         <ul>
-          <li>About Me section – currently looks simple</li>
+          <li>About Me section - currently looks simple</li>
           <li>
             Hero Section - Let me know if you prefer Hero V1, V2, or V3. Or to
             refine, add...
           </li>
           <li>
-            Reels section – Still developing, will integrate more version soon
+            Reels section - Still developing, will integrate more version soon
           </li>
           <li>
             Will develop start with dekstop size first, mobile responsive soon
@@ -452,10 +448,6 @@
             spaceBetween: 30,
             centeredSlides: true,
             loop: true,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
             on: {
               init: function () {
                 playVideo(this);
