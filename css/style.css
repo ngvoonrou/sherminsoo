@@ -36,7 +36,8 @@ section {
 #photography,
 #reels {
   background: #f4f4f4;
-  overflow-x: auto;
+  overflow: visible;
+  position: relative;
 }
 
 /* Make all hero versions take full viewport height */
@@ -605,6 +606,8 @@ section {
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
+  z-index: 1;
+  position: relative;
 }
 .reels-swiper .swiper-button-next {
   right: -20px;
