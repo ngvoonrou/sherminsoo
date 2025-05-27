@@ -583,9 +583,7 @@ section {
 }
 .reels-swiper .swiper-slide.swiper-slide-active {
   opacity: 1;
-  transform: scale(1.15);
-  z-index: 2;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
 }
 .reel-video {
   width: 100%;
