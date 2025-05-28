@@ -44,7 +44,7 @@ export function setupRecentWork() {
             )}</div>
             <div class="photo-info">
               <div class="photo-title">${item.title}</div>
-              <div class="photo-year">${item.year}</div>
+              <div class="photo-country">${item.country}</div>
             </div>
           </div>
         `;

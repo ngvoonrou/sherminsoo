@@ -3,78 +3,91 @@
     "category": "landscape",
     "src": "assets/films/landscape/Hualien.jpg",
     "title": "Hua Lien",
+    "country": "Taiwan",
     "year": 2021
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/Nam Cheong 1.jpeg",
     "title": "Nam Cheong",
+    "country": "Hong Kong",
     "year": 2021
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/Nam Cheong 2.jpeg",
     "title": "Nam Cheong",
+    "country": "Hong Kong",
     "year": 2021
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/Sai Wan.JPG",
     "title": "Sai Wan",
+    "country": "Hong Kong",
     "year": 2025
   },
   {
     "category": "landscape",
     "src": "assets/films/landscape/West Kowloon.jpeg",
     "title": "West Kowloon",
+    "country": "Hong Kong",
     "year": 2025
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Asakusa.jpg",
     "title": "Asakusa",
+    "country": "Japan",
     "year": 2025
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Fujisan 2.jpg",
     "title": "Fujisan",
+    "country": "Japan",
     "year": 2025
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Fujisan.jpg",
     "title": "Fujisan",
+    "country": "Japan",
     "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 1.jpeg",
     "title": "Hoi An",
+    "country": "Vietnam",
     "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 2.jpeg",
     "title": "Hoi An",
+    "country": "Vietnam",
     "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 3.jpeg",
     "title": "Hoi An",
+    "country": "Vietnam",
     "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 4.jpg",
     "title": "Hoi An",
+    "country": "Vietnam",
     "year": 2024
   },
   {
     "category": "portraits",
     "src": "assets/films/portraits/Hoi An 5.jpg",
     "title": "Hoi An 2",
+    "country": "Vietname",
     "year": 2024
   }
 ]
