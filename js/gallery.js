@@ -30,11 +30,11 @@ export function setupRecentWork() {
   fetch("data/gallery.json")
     .then((res) => res.json())
     .then((data) => {
-      const container = document.getElementById("recentWorkContainer");
+      const container = document.getElementById("photographyContainer");
       container.innerHTML = "";
       data.forEach((item, index) => {
         const div = document.createElement("div");
-        div.className = "recent-work-item";
+        div.className = "photography-item";
         div.innerHTML = `
           <img src="${item.src}" alt="${item.title}" />
           <div class="photo-meta">

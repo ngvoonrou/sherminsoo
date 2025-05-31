@@ -33,8 +33,10 @@ section {
     padding: 60px 20px;
   }
 }
-#photography,
-#reels {
+#skill-sets,
+#visual-design,
+#reels,
+#project-marketing {
   background: #f4f4f4;
   overflow: visible;
   position: relative;
@@ -270,7 +272,7 @@ section {
 }
 
 /* gallery v2 */
-.recent-work-scroll {
+.photography-scroll {
   display: flex;
   gap: 30px;
   overflow-x: auto;
@@ -278,22 +280,22 @@ section {
   scroll-snap-type: x mandatory;
   position: relative;
 }
-.recent-work-scroll::-webkit-scrollbar {
+.photography-scroll::-webkit-scrollbar {
   height: 4px;
   background: #e0dedb;
 }
-.recent-work-scroll::-webkit-scrollbar-track {
+.photography-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
-.recent-work-scroll::-webkit-scrollbar-thumb {
+.photography-scroll::-webkit-scrollbar-thumb {
   background-color: #4a5a4d;
   border-radius: 4px;
   transition: background-color 0.3s;
 }
-.recent-work-scroll::-webkit-scrollbar-thumb:hover {
+.photography-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #2f3d34;
 }
-.recent-work-item {
+.photography-item {
   flex: 0 0 auto;
   width: auto;
   border-radius: 5px;
@@ -302,10 +304,10 @@ section {
   transition: transform 0.3s ease;
   scroll-snap-align: start;
 }
-.recent-work-item:hover {
+.photography-item:hover {
   transform: translateY(-10px);
 }
-.recent-work-item img {
+.photography-item img {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   width: 100%;
