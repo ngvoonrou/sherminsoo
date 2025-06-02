@@ -10,9 +10,7 @@ export function setupModal() {
   let currentIndex = -1;
 
   function updateImages() {
-    allImages = Array.from(
-      document.querySelectorAll(".masonry-gallery img, .recent-work-item img")
-    );
+    allImages = Array.from(document.querySelectorAll(".photography-item img"));
     allImages.forEach((img, i) => {
       img.style.cursor = "zoom-in";
       img.onclick = () => {
