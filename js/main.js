@@ -1,9 +1,10 @@
 import { initTyped } from "./typed-init.js";
-import { setuSocialMedia } from "./socialMedia.js";
-import { setupVisualDesign } from "./visualDesign.js";
+import { setuSocialMedia } from "./social-media.js";
+import { setupVisualDesign } from "./visual-design.js";
 import { setupRecentWork } from "./gallery.js";
 import { setupReels } from "./reels.js";
 import { setupReelsV2 } from "./reels-v2.js";
+import { setupProjectMarketing } from "./project-marketing.js";
 import { setupModal } from "./modal.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRecentWork();
   setupReels();
   setupReelsV2();
+  setupProjectMarketing();
   setupModal();
 
   document.addEventListener("mousemove", (e) => {

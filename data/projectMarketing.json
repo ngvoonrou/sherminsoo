@@ -1,0 +1,60 @@
+[
+  {
+    "title": "The Stellar x Live With Art Collaboration",
+    "type": "In-house production",
+    "description": "Organized in-hotel events, collaborating with an artist for live oil painting sessions and workshops to boost brand visibility.",
+    "media": [
+      {
+        "type": "video",
+        "src": "assets/projectMarketing/theStellar/video1.mp4",
+        "thumbnail": "assets/projectMarketing/theStellar/video1-thumb.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projectMarketing/theStellar/image2.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projectMarketing/theStellar/image3.png"
+      },
+      {
+        "type": "image",
+        "src": "assets/projectMarketing/theStellar/image4.png"
+      }
+    ],
+    "credits": {
+      "artist": "@livewithart_hongkong",
+      "instagram": "https://www.instagram.com/livewithart_hongkong"
+    }
+  },
+  {
+    "title": "BONDLANE I & II On-site Photoshooting",
+    "type": "In-house production",
+    "description": "Sourced potential photographers in Hong Kong and facilitated on-site photoshoot/aerial shooting for newly launched property.",
+    "projects": [
+      {
+        "name": "BONDLANE I",
+        "images": [
+          "assets/projectMarketing/bondlane/bondlane1_img1.png",
+          "assets/projectMarketing/bondlane/bondlane1_img2.png",
+          "assets/projectMarketing/bondlane/bondlane1_img3.png",
+          "assets/projectMarketing/bondlane/bondlane1_img4.png"
+        ],
+        "link": "https://www.bondlaneone.com.hk/"
+      },
+      {
+        "name": "BONDLANE II",
+        "images": [
+          "assets/projectMarketing/bondlane/bondlane2_img1.png",
+          "assets/projectMarketing/bondlane/bondlane2_img2.png",
+          "assets/projectMarketing/bondlane/bondlane2_img3.png",
+          "assets/projectMarketing/bondlane/bondlane2_img4.png"
+        ],
+        "link": "https://www.bondlanetwo.com.hk/"
+      }
+    ],
+    "credits": {
+      "photographer": "@stevenkophotography"
+    }
+  }
+]
