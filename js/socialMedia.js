@@ -4,83 +4,100 @@ export function setuSocialMedia() {
     .then((strategyData) => {
       const strategySection = document.getElementById("strategy");
 
-      strategyData.forEach((section, index) => {
+      strategyData.forEach((section, sectionIndex) => {
+        const carouselId = `strategy-carousel-${sectionIndex}`;
+        const paginationId = `pagination-${sectionIndex}`;
+        const nextBtnId = `next-${sectionIndex}`;
+        const prevBtnId = `prev-${sectionIndex}`;
+
+        // Section Title
         const sectionTitle = document.createElement("h3");
-        sectionTitle.className = "mt-5 mb-3 text-center";
+        sectionTitle.className = "carousel-group-title text-center mt-5";
         sectionTitle.textContent = section.title;
         strategySection.appendChild(sectionTitle);
 
-        const row = document.createElement("div");
-        row.className = "row g-4";
+        // Swiper Container
+        const carouselHTML = `
+          <div class="swiper strategy-carousel mb-5" id="${carouselId}">
+            <div class="swiper-wrapper">
+              ${section.projects
+                .map((project) => {
+                  const {
+                    client,
+                    inHouseProduction,
+                    contentType,
+                    descriptionTitle,
+                    descriptionPoints,
+                    image,
+                  } = project;
 
-        section.projects.forEach((project, projIndex) => {
-          const {
-            client,
-            inHouseProduction,
-            contentType,
-            descriptionTitle,
-            descriptionPoints,
-            image,
-          } = project;
+                  const title = client || inHouseProduction || "Untitled";
 
-          const title = client || inHouseProduction || "Untitled";
-
-          const swiperId = `strategy-swiper-${index}-${projIndex}`;
-
-          const cardHTML = `
-            <div class="col-md-6 col-lg-4"}">
-              <div class="card strategy-card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title mb-2">${title}</h5>
-                  ${
-                    contentType
-                      ? `<h6 class="card-subtitle text-muted mb-2">${contentType}</h6>`
-                      : ""
-                  }
-                  ${
-                    descriptionTitle
-                      ? `<p class="text-uppercase text-primary fw-bold small mb-2">${descriptionTitle}</p>`
-                      : ""
-                  }
-                  ${
-                    descriptionPoints
-                      ? `<ul class="small ps-3 mb-3">${descriptionPoints
-                          .map((point) => `<li>${point}</li>`)
-                          .join("")}</ul>`
-                      : ""
-                  }
-                  ${
-                    image && image.length
-                      ? `<div class="swiper strategy-swiper" id="${swiperId}">
-                          <div class="swiper-wrapper">
-                            ${image
-                              .map(
-                                (src) => `
-                                  <div class="swiper-slide">
-                                    <img src="${src}" class="img-fluid rounded" alt="${title}" style="height: 100px; object-fit: cover;" />
-                                  </div>
-                                `
-                              )
-                              .join("")}
-                          </div>
-                        </div>`
-                      : ""
-                  }
-                </div>
-              </div>
+                  return `
+                    <div class="swiper-slide p-4">
+                      <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                          <h4 class="card-title">${title}</h4>
+                          ${
+                            contentType
+                              ? `<h6 class="text-muted">${contentType}</h6>`
+                              : ""
+                          }
+                          ${
+                            descriptionTitle
+                              ? `<p class="text-uppercase text-primary fw-bold small mt-3 mb-0">${descriptionTitle}</p>`
+                              : ""
+                          }
+                          ${
+                            descriptionPoints
+                              ? `<ul class="small ps-3">${descriptionPoints
+                                  .map((point) => `<li>${point}</li>`)
+                                  .join("")}</ul>`
+                              : ""
+                          }
+                          ${
+                            image && image.length
+                              ? `
+                              <div class="strategy-image-scroll mt-3">
+                                ${image
+                                  .map(
+                                    (src) =>
+                                      `<img src="${src}" class="strategy-image-scroll-item rounded" alt="${title}" />`
+                                  )
+                                  .join("")}
+                              </div>
+                            `
+                              : ""
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  `;
+                })
+                .join("")}
             </div>
-          `;
+            <div class="swiper-pagination" id="${paginationId}"></div>
+            <div class="swiper-button-prev" id="${prevBtnId}"></div>
+            <div class="swiper-button-next" id="${nextBtnId}"></div>
+          </div>
+        `;
 
-          row.innerHTML += cardHTML;
-        });
+        strategySection.innerHTML += carouselHTML;
 
-        strategySection.appendChild(row);
-
+        // Initialize Swiper per section
         setTimeout(() => {
-          new Swiper(".strategy-swiper", {
-            slidesPerView: 2.2,
-            spaceBetween: 10,
-            freeMode: true,
+          new Swiper(`#${carouselId}`, {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+              el: `#${paginationId}`,
+              clickable: true,
+            },
+            navigation: {
+              nextEl: `#${nextBtnId}`,
+              prevEl: `#${prevBtnId}`,
+            },
           });
         }, 0);
       });
