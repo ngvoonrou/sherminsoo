@@ -35,20 +35,20 @@
       {
         "name": "BONDLANE I",
         "images": [
-          "assets/projectMarketing/bondlane/bondlane1_img1.png",
-          "assets/projectMarketing/bondlane/bondlane1_img2.png",
-          "assets/projectMarketing/bondlane/bondlane1_img3.png",
-          "assets/projectMarketing/bondlane/bondlane1_img4.png"
+          "assets/projectMarketing/bondlane/bondlane1_img1.jpg",
+          "assets/projectMarketing/bondlane/bondlane1_img2.jpg",
+          "assets/projectMarketing/bondlane/bondlane1_img3.jpg",
+          "assets/projectMarketing/bondlane/bondlane1_img4.jpg"
         ],
         "link": "https://www.bondlaneone.com.hk/"
       },
       {
         "name": "BONDLANE II",
         "images": [
-          "assets/projectMarketing/bondlane/bondlane2_img1.png",
-          "assets/projectMarketing/bondlane/bondlane2_img2.png",
-          "assets/projectMarketing/bondlane/bondlane2_img3.png",
-          "assets/projectMarketing/bondlane/bondlane2_img4.png"
+          "assets/projectMarketing/bondlane/bondlane2_img1.jpg",
+          "assets/projectMarketing/bondlane/bondlane2_img2.jpg",
+          "assets/projectMarketing/bondlane/bondlane2_img3.jpg",
+          "assets/projectMarketing/bondlane/bondlane2_img4.jpg"
         ],
         "link": "https://www.bondlanetwo.com.hk/"
       }

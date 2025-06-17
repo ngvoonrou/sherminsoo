@@ -67,19 +67,30 @@ export function setupProjectMarketing() {
         }
 
         if (item.projects) {
-          item.projects.forEach((proj) => {
-            const projTitle = document.createElement("h5");
-            projTitle.className = "mt-4";
+          const projectRow = document.createElement("div");
+          projectRow.className = "row g-4";
+
+          item.projects.forEach((proj, projIndex) => {
+            const col = document.createElement("div");
+            col.className = "col-md-6 text-center";
+
+            const projTitle = document.createElement("div");
+            projTitle.className =
+              "border border-1 rounded-pill fw-semibold px-3 py-1 d-inline-block mb-2";
+            projTitle.style.borderColor = "#d8b78f";
+            projTitle.style.color = "#5c4a36";
+            projTitle.style.fontFamily = "'Playfair', serif";
+            projTitle.style.backgroundColor = "#fff";
             projTitle.textContent = proj.name;
 
             const row = document.createElement("div");
             row.className = "row g-3";
 
             proj.images.forEach((img) => {
-              const col = document.createElement("div");
-              col.className = "col-md-3";
-              col.innerHTML = `<img src="${img}" class="img-fluid rounded" />`;
-              row.appendChild(col);
+              const imgCol = document.createElement("div");
+              imgCol.className = "col-md-6";
+              imgCol.innerHTML = `<img src="${img}" class="img-fluid rounded" style="max-height: 177px; height: 100%; width: 100%;"/>`;
+              row.appendChild(imgCol);
             });
 
             const link = document.createElement("a");
@@ -89,10 +100,14 @@ export function setupProjectMarketing() {
               "d-block mt-2 mb-4 text-decoration-underline text-primary";
             link.textContent = `Check out more on ${proj.name} official website`;
 
-            contentPane.appendChild(projTitle);
-            contentPane.appendChild(row);
-            contentPane.appendChild(link);
+            col.appendChild(projTitle);
+            col.appendChild(row);
+            col.appendChild(link);
+
+            projectRow.appendChild(col);
           });
+
+          contentPane.appendChild(projectRow);
         }
 
         if (item.credits) {
