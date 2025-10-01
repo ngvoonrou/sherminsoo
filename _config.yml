@@ -1,0 +1,7 @@
+title: Shermin Soo
+description: Portfolio of Shermin Soo – Digital Marketer & Visual Storyteller
+url: https://ngvoonrou.github.io
+baseurl: "" # change to "/REPO" if this is a project site
+markdown: kramdown
+theme: null
+plugins: [] # keep empty for GitHub Pages “safe mode”
