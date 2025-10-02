@@ -50,7 +50,7 @@
       <div class="intro-content container">
         <div class="row align-items-center">
           <div class="col-md-6 intro-text">
-            <p class="intro-title">Digital Marketer & Visual Storyteller</p>
+            <p class="intro-title">Digital Marketer &amp; Visual Storyteller</p>
             <p class="intro-tagline">
               I create social strategies, visuals, and videos that elevate
               brands and drive meaningful growth.
@@ -94,6 +94,33 @@
         visibility, collaborate across teams and vendors, and deliver measurable
         growth in hospitality and real estate.
       </p>
+
+      <!-- Marquee: continuous pill slider -->
+      <div class="marquee" aria-label="Highlights">
+        <div class="marquee__track">
+          <ul class="marquee__group">
+            <li class="marquee__item">Copywriting (ENG &amp; CHI)</li>
+            <li class="marquee__item">
+              Translation (ENG to CHI &amp; vice versa)
+            </li>
+            <li class="marquee__item">Social Media Strategy</li>
+            <li class="marquee__item">
+              Photography &amp; Graphic Design (Canva, Illustrator, InDesign,
+              PS)
+            </li>
+            <li class="marquee__item">
+              Video Production &amp; Editing (iMovie, Capcut)
+            </li>
+            <li class="marquee__item">
+              Web Content Management (WordPress) &amp; eDM System (Spread)
+            </li>
+            <li class="marquee__item">Project Management</li>
+            <li class="marquee__item">Cross-Functional Team Collaboration</li>
+          </ul>
+          <!-- Will be auto-cloned for a seamless loop -->
+          <ul class="marquee__group" aria-hidden="true"></ul>
+        </div>
+      </div>
     </section>
 
     <!-- Optional Bootstrap JS -->
@@ -160,8 +187,6 @@
         heroLogo.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${s})`;
 
         // Crossfade & sticky behavior:
-        //  - turn bg white early
-        //  - bring navbar brand in earlier so it's visible on laptop heights
         const bgOn = raw > 0.02;
         const navA = smoothstep(0.35, 0.7, raw); // earlier fade-in
         const heroA = 1 - smoothstep(0.4, 0.75, raw);
@@ -171,7 +196,6 @@
         heroLogo.style.opacity = String(heroA);
         document.body.classList.toggle("navbar-active", navA > 0.25);
 
-        // Hard snap so the navbar never disappears after the hero
         if (raw >= 0.98) {
           navLogo.style.opacity = "1";
           heroLogo.style.opacity = "0";
@@ -224,6 +248,27 @@
           { passive: true }
         );
       }
+    </script>
+
+    <!-- Marquee setup (clone list & pause-on-hover) -->
+    <script>
+      (function () {
+        const marquee = document.querySelector(".marquee");
+        if (!marquee) return;
+        const groups = marquee.querySelectorAll(".marquee__group");
+        if (groups.length < 2) return;
+
+        // Duplicate the first group into the second group to form a seamless loop
+        groups[1].innerHTML = groups[0].innerHTML;
+
+        // Optional: pause on hover (desktop)
+        marquee.addEventListener("mouseenter", () =>
+          marquee.classList.add("is-paused")
+        );
+        marquee.addEventListener("mouseleave", () =>
+          marquee.classList.remove("is-paused")
+        );
+      })();
     </script>
   </body>
 </html>

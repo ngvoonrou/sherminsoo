@@ -1,8 +1,9 @@
 /* ================ Base ================ */
 :root {
-  --white: #fff;
-  --black: #111;
-  --blue: rgb(48, 99, 192);
+  --primary: #222222;
+  --secondary: #7b7b7b;
+  --tertiary: #f8f8f8;
+  --white: #ffffff;
 }
 * {
   box-sizing: border-box;
@@ -47,31 +48,27 @@ h2 {
   background: transparent;
   border-bottom: 1px solid transparent;
   transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-  /* Always clickable; visibility is controlled via opacity of the brand text */
   pointer-events: auto;
 }
 .nav-brand {
   font-weight: 700;
   font-size: clamp(22px, 3.5vw, 42px);
   letter-spacing: 0.02em;
-  color: var(--black);
+  color: var(--primary);
   text-decoration: none;
   opacity: 0; /* driven by JS for crossfade */
-  transform: translateZ(0); /* avoid subpixel blur */
+  transform: translateZ(0);
   will-change: opacity;
 }
 .page-revealed .brand-navbar {
-  /* background: #fff;
-  border-color: #eee;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); */
+  /* optional solid nav styles */
 }
 
 /* ================ Combined Hero + Intro ================ */
 .hero-intro {
   max-width: none;
   width: 100%;
-  /* give the morph enough room on laptop screens */
-  min-height: 200vh; /* was 180vh; more runway so nav is visible sooner */
+  min-height: 200vh; /* runway */
 }
 
 /* Sticky overlay sits ABOVE the intro content but allows clicks through */
@@ -84,7 +81,7 @@ h2 {
   place-items: center;
   overflow: clip;
   isolation: isolate;
-  pointer-events: none; /* interact with content beneath */
+  pointer-events: none;
   z-index: 2;
 }
 
@@ -95,7 +92,7 @@ h2 {
   font-weight: 700;
   font-size: clamp(64px, 12vw, 140px);
   letter-spacing: 0.02em;
-  color: var(--black);
+  color: var(--primary);
   line-height: 1;
   will-change: transform, opacity;
   transform-origin: center center;
@@ -129,17 +126,16 @@ h2 {
   transition: transform 0.25s ease, color 0.25s ease;
 }
 .social-icons a:hover {
-  color: var(--blue);
+  color: var(--secondary);
   transform: translateY(-2px);
 }
 .intro-photo img {
   max-width: 70%;
 }
 .photo-box {
-  width: min(90%, 350px); /* responsive width with a max cap */
+  width: min(90%, 350px);
   max-height: min(80svh, 400px);
   margin-inline: auto;
-
   border: 2px solid rgba(0, 0, 0, 0.85);
   border-radius: 20px;
   overflow: hidden;
@@ -148,8 +144,8 @@ h2 {
 .photo-box .photo {
   width: 80%;
   height: auto;
-  object-fit: cover; /* crop to fill */
-  object-position: 50% 40%; /* tweak if you want the face higher/lower */
+  object-fit: cover;
+  object-position: 50% 40%;
   transition: transform 0.35s ease;
 }
 .photo-box:hover .photo {
@@ -164,7 +160,7 @@ h2 {
   }
   .hero-intro {
     min-height: 220vh;
-  } /* extra runway on short mobile viewports */
+  }
 }
 @media (max-height: 780px) {
   .intro-content {
@@ -176,5 +172,58 @@ h2 {
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+  }
+}
+
+/* ================ Marquee (infinite pill slider) ================ */
+.marquee {
+  --gap: 10px;
+  --speed: 32s; /* increase for slower loop, decrease for faster */
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+  padding-block: 16px;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: var(--gap);
+  animation: marquee-scroll var(--speed) linear infinite;
+  will-change: transform;
+}
+
+.marquee__group {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  white-space: nowrap; /* keep items in one line */
+}
+
+.marquee__item {
+  display: inline-block;
+  padding: 20px 25px;
+  border-radius: 16px;
+  background: var(--primary);
+  color: var(--tertiary);
+  font-weight: 500;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  } /* move width of one group */
+}
+
+/* Pause on hover (desktop) */
+.marquee.is-paused .marquee__track {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none !important;
+    transform: none !important;
   }
 }
