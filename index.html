@@ -1,268 +1,224 @@
-<!-- Updated index.html with Bootstrap integration and retained custom styling where necessary -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shermin Soo | Portfolio</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- (Optional) Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Fonts & Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Libraries -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Icons (for social links) -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <!-- Custom Styles -->
+    <!-- Custom -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <nav class="bottom-nav">
-      <ul>
-        <li>
-          <a href="#hero-grid" title="Hero"><i class="fas fa-user"></i></a>
-        </li>
-        <li>
-          <a href="#strategy" title="Social Media Strategy"
-            ><i class="fas fa-lightbulb"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#visual-design" title="Visual Design"
-            ><i class="fas fa-lightbulb"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#photography" title="Photography"
-            ><i class="fas fa-camera-retro"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#videoProduction" title="Video Production"
-            ><i class="fas fa-video"></i
-          ></a>
-        </li>
-      </ul>
+    <!-- Top Navbar (target word-mark) -->
+    <nav class="brand-navbar" aria-label="Primary">
+      <a href="#" class="nav-brand" id="navLogo">Shermin&nbsp;Soo</a>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-grid d-flex align-items-center justify-content-center">
-      <div class="container">
+    <!-- One combined section: sticky hero logo overlays the intro content -->
+    <section id="hero-intro" class="hero-intro" aria-label="Intro">
+      <!-- Sticky overlay (SOURCE word-mark). Sits above the intro content. -->
+      <div class="hero-intro__sticky" aria-hidden="true">
+        <h1 class="hero-logo" id="heroLogo">Shermin&nbsp;Soo</h1>
+      </div>
+
+      <!-- INTRO CONTENT (scrolls behind the big logo initially) -->
+      <div class="intro-content container">
         <div class="row align-items-center">
-          <div class="col-md-6 hero-text">
-            <h1>Hello there,</h1>
-            <span class="hero-name">I am Shermin Soo</span>
-            <p class="hero-title">Digital Marketer & Visual Storyteller</p>
-            <div class="hero-tagline">
-              <span id="typed-text"></span>
-            </div>
-            <div class="hero-actions">
-              <div class="social-icons d-flex gap-3">
-                <a
-                  href="https://www.linkedin.com/in/shermin-soo/"
-                  target="_blank"
-                  title="LinkedIn"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com/sherminsoo"
-                  target="_blank"
-                  title="Instagram"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a
-                  href="https://www.behance.net/sherminsoo"
-                  target="_blank"
-                  title="Behance"
-                  ><i class="fab fa-behance"></i
-                ></a>
-              </div>
+          <div class="col-md-6 intro-text">
+            <p class="intro-title">Digital Marketer & Visual Storyteller</p>
+            <p class="intro-tagline">
+              I create social strategies, visuals, and videos that elevate
+              brands and drive meaningful growth.
+            </p>
+
+            <div class="social-icons d-flex gap-3">
+              <a
+                href="https://www.linkedin.com/in/shermin-soo/"
+                target="_blank"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/sherminsoo"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
           </div>
-          <div class="col-md-6 hero-photo text-center">
-            <img
-              src="assets/profile_pic/shermin-soo2.png"
-              alt="Shermin Soo"
-              class="img-fluid"
-            />
+
+          <div class="col-md-6 intro-photo text-center">
+            <div class="photo-box">
+              <img
+                src="assets/profile_pic/shermin-soo2.png"
+                alt="Shermin Soo"
+                class="img-fluid"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <!-- About Section -->
-    <section id="about" class="container">
+    <!-- Next section continues flow -->
+    <section id="about" class="container section-pad">
       <h2>About Me</h2>
       <p>
-        I am Shermin Soo, a versatile Marketer with a proven track record in
-        Digital Content Creation and Project Marketing. Well-versed in
-        optimising brand visibility, fostering collaboration across teams and
-        vendors, and driving meaningful growth in hospitality and real estate
-        industries.
+        I am Shermin Soo, a versatile marketer with a proven track record in
+        digital content creation and project marketing. I optimize brand
+        visibility, collaborate across teams and vendors, and deliver measurable
+        growth in hospitality and real estate.
       </p>
     </section>
 
-    <!-- Skill Sets Section -->
-    <section id="skill-sets" class="container">
-      <h2>Skill sets</h2>
-      <p>contentscontentscontentscontentscontentscontentscontents</p>
-    </section>
-
-    <!-- Social Media Strategy Section -->
-    <section id="strategy" class="container">
-      <h2>Social Media Strategy</h2>
-      <p class="text-center mb-5 mx-auto" style="max-width: 700px">
-        Managed social media for hospitality, property, lifestyle and personal
-        brands, elevating brand visibility with effective social strategies on
-        Facebook, Instagram and Red.
-      </p>
-    </section>
-
-    <!-- Visual Design Section -->
-    <section id="visual-design" class="container">
-      <h2>Visual Design</h2>
-      <p class="text-center mb-5 mx-auto" style="max-width: 700px">
-        Developed designs in alignment with brand identity, enhancing visual
-        appeal and creating engaging content.
-      </p>
-      <div class="row g-4" id="visualDesignContainer"></div>
-    </section>
-
-    <!-- Films Photography Gallery Style 2 -->
-    <section id="photography" class="container photography-section">
-      <h2>Films Photography</h2>
-      <div class="photography-scroll" id="photographyContainer"></div>
-    </section>
-
-    <!-- Video Production & youtube Section -->
-    <section id="videoProduction" class="container">
-      <h2>Video Production</h2>
-
-      <!-- reels version 1 -->
-      <div class="reels">
-        <h3>Reels</h3>
-        <div class="reels-wrapper row gx-5 align-items-start">
-          <div class="col-md-3 reels-left">
-            <small id="reels-type" class="reels-type"></small>
-            <h2 id="reels-main-title">Loading...</h2>
-            <span id="reels-subtitle" class="reels-subtitle"></span>
-          </div>
-          <div class="col-md-9 reels-slider-container">
-            <div class="swiper reels-swiper">
-              <div class="swiper-wrapper" id="reelsSlides">
-                <!-- Slides will be injected dynamically -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- reels version 2 -->
-      <div class="reels mt-5">
-        <h3 class="text-center mb-4">Reels</h3>
-        <p class="text-center mb-5 mx-auto" style="max-width: 700px">
-          Descriptions...
-        </p>
-
-        <div class="horizontal-scroll-wrapper">
-          <div class="d-inline-flex gap-4 px-2" id="reelsV2Container"></div>
-        </div>
-      </div>
-
-      <div class="youtube mt-5">
-        <h3>YouTube</h3>
-        <p>Contents...</p>
-      </div>
-    </section>
-
-    <!-- Project Marketing Section -->
-    <section id="project-marketing" class="container py-5">
-      <h2 class="text-center mb-4">Project Marketing</h2>
-      <p class="text-center mb-4 mx-auto" style="max-width: 700px">
-        Spearheaded project marketing and vendor management for residential
-        properties, assisting with on-site photoshoots, and in-hotel events to
-        enhance brand visibility and boost sales.
-      </p>
-
-      <div class="row justify-content-center align-items-center mb-4 p-4">
-        <div class="col-md-3">
-          <img
-            src="assets/projectMarketing/companyLogo/the-stellar.png"
-            alt="The Stellar"
-            style="width: 200px; height: auto"
-          />
-        </div>
-        <div class="col-md-3">
-          <img
-            src="assets/projectMarketing/companyLogo/bondlane-i.png"
-            alt="Bondlane I"
-            style="width: 200px; height: auto"
-          />
-        </div>
-        <div class="col-md-3">
-          <img
-            src="assets/projectMarketing/companyLogo/bondlane-ii.png"
-            alt="Bondlane II"
-            style="width: 200px; height: auto"
-          />
-        </div>
-      </div>
-
-      <!-- Tabs -->
-      <ul class="nav nav-tabs justify-content-center" id="projectTabs"></ul>
-
-      <!-- Tab Content -->
-      <div class="tab-content pt-4" id="projectTabsContent"></div>
-    </section>
-
-    <!-- Video Modal -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content bg-dark border-0">
-          <div class="modal-body p-0">
-            <video id="modalVideo" controls autoplay class="w-100"></video>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="modalImg" />
-      <div class="modal-caption" id="modalCaption"></div>
-      <span class="nav-arrow nav-left">&#10094;</span>
-      <span class="nav-arrow nav-right">&#10095;</span>
-    </div>
-
-    <!-- Glow Cursor -->
-    <div class="glow-cursor" id="glowCursor"></div>
-
-    <!-- JS Libraries -->
+    <!-- Optional Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/reels-v2.js"></script>
+
+    <!-- Continuous, reversible morph (center big -> navbar small) -->
+    <script type="module">
+      const section = document.getElementById("hero-intro");
+      const heroLogo = document.getElementById("heroLogo"); // big, centered, sticky
+      const navLogo = document.getElementById("navLogo"); // small, in navbar
+
+      // Precomputed deltas (pixels) and scale factor
+      let dx = 0,
+        dy = 0,
+        scale = 1;
+
+      // Helpers
+      const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+      const ease = (t) =>
+        t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; // cubic in/out
+      const smoothstep = (a, b, x) => {
+        const t = clamp((x - a) / (b - a), 0, 1);
+        return t * t * (3 - 2 * t);
+      };
+
+      // Progress through the sticky portion of the section (0 -> 1)
+      function progressThroughSticky() {
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        const top = section.offsetTop;
+        const scrollable = Math.max(1, section.offsetHeight - vh);
+        return clamp((window.scrollY - top) / scrollable, 0, 1);
+      }
+
+      // Measure once (and on resize): compute vector+scale from hero to nav
+      function measure() {
+        heroLogo.style.transform = "none"; // reset before measuring
+
+        const src = heroLogo.getBoundingClientRect();
+        const dst = navLogo.getBoundingClientRect();
+
+        // centers
+        const srcX = src.left + src.width / 2;
+        const srcY = src.top + src.height / 2;
+        const dstX = dst.left + dst.width / 2;
+        const dstY = dst.top + dst.height / 2;
+
+        dx = dstX - srcX;
+        dy = dstY - srcY;
+        scale = dst.height / src.height;
+
+        update(); // sync with current scroll
+      }
+
+      // Write transforms only (no layout reads)
+      function update() {
+        const raw = progressThroughSticky();
+        const p = ease(raw);
+
+        // Interpolate transform
+        const s = 1 + (scale - 1) * p;
+        const tx = dx * p;
+        const ty = dy * p;
+
+        heroLogo.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${s})`;
+
+        // Crossfade & sticky behavior:
+        //  - turn bg white early
+        //  - bring navbar brand in earlier so it's visible on laptop heights
+        const bgOn = raw > 0.02;
+        const navA = smoothstep(0.35, 0.7, raw); // earlier fade-in
+        const heroA = 1 - smoothstep(0.4, 0.75, raw);
+
+        document.body.classList.toggle("page-revealed", bgOn);
+        navLogo.style.opacity = String(navA);
+        heroLogo.style.opacity = String(heroA);
+        document.body.classList.toggle("navbar-active", navA > 0.25);
+
+        // Hard snap so the navbar never disappears after the hero
+        if (raw >= 0.98) {
+          navLogo.style.opacity = "1";
+          heroLogo.style.opacity = "0";
+          document.body.classList.add("page-revealed", "navbar-active");
+        }
+        if (raw <= 0.01) {
+          navLogo.style.opacity = "0";
+          heroLogo.style.opacity = "1";
+          document.body.classList.remove("navbar-active");
+        }
+      }
+
+      // rAF scroll loop
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            update();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      // Init (measure after fonts to avoid jumps)
+      function initMeasure() {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(measure);
+        } else {
+          measure();
+        }
+      }
+      window.addEventListener("load", initMeasure);
+      window.addEventListener("resize", initMeasure, { passive: true });
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // Reduced motion: snap logic
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        window.addEventListener(
+          "scroll",
+          () => {
+            const p = progressThroughSticky();
+            const inHeader = p > 0.2;
+            document.body.classList.toggle("page-revealed", inHeader);
+            document.body.classList.toggle("navbar-active", inHeader);
+            navLogo.style.opacity = inHeader ? "1" : "0";
+            heroLogo.style.opacity = inHeader ? "0" : "1";
+            heroLogo.style.transform = "none";
+          },
+          { passive: true }
+        );
+      }
+    </script>
   </body>
 </html>

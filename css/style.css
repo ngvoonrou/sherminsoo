@@ -1,409 +1,180 @@
-/* ---------- Reset & Global ---------- */
+/* ================ Base ================ */
+:root {
+  --white: #fff;
+  --black: #111;
+  --blue: rgb(48, 99, 192);
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+html,
+body {
+  min-height: 100%;
+}
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  background: #ffffff;
+  background: var(--white);
   color: #333;
+  -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  transition: background 0.6s ease;
+}
+
+/* Rhythm */
+.section-pad {
+  padding: 80px 0;
 }
 h2 {
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
+  text-align: center;
   color: #222;
   margin-bottom: 30px;
-  text-align: center;
-}
-h3 {
-  font-size: 1.8em;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
-/* ---------- Section Base ---------- */
-section {
-  padding: 80px 0;
-  max-width: 1400px;
-  margin: 0 auto;
+/* ================ Navbar (TARGET) ================ */
+.brand-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 2000; /* above any hero overlays */
+  height: 72px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  /* Always clickable; visibility is controlled via opacity of the brand text */
+  pointer-events: auto;
+}
+.nav-brand {
+  font-weight: 700;
+  font-size: clamp(22px, 3.5vw, 42px);
+  letter-spacing: 0.02em;
+  color: var(--black);
+  text-decoration: none;
+  opacity: 0; /* driven by JS for crossfade */
+  transform: translateZ(0); /* avoid subpixel blur */
+  will-change: opacity;
+}
+.page-revealed .brand-navbar {
+  /* background: #fff;
+  border-color: #eee;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); */
+}
+
+/* ================ Combined Hero + Intro ================ */
+.hero-intro {
+  max-width: none;
+  width: 100%;
+  /* give the morph enough room on laptop screens */
+  min-height: 200vh; /* was 180vh; more runway so nav is visible sooner */
+}
+
+/* Sticky overlay sits ABOVE the intro content but allows clicks through */
+.hero-intro__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh; /* mobile-safe */
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  isolation: isolate;
+  pointer-events: none; /* interact with content beneath */
+  z-index: 2;
+}
+
+/* Big word-mark (SOURCE) */
+.hero-logo {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(64px, 12vw, 140px);
+  letter-spacing: 0.02em;
+  color: var(--black);
+  line-height: 1;
+  will-change: transform, opacity;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+/* Intro content scrolls behind the sticky logo initially */
+.intro-content {
+  min-height: calc(100svh - 72px);
+  display: grid;
+  align-items: center;
+  padding: clamp(24px, 6vh, 80px) 20px;
+}
+
+/* Intro content styling */
+.intro-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 12px;
+}
+.intro-tagline {
+  color: #555;
+  max-width: 560px;
+  line-height: 1.6;
+  margin: 12px 0 20px;
+}
+.social-icons a {
+  font-size: 1.2rem;
+  color: #333;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.social-icons a:hover {
+  color: var(--blue);
+  transform: translateY(-2px);
+}
+.intro-photo img {
+  max-width: 70%;
+}
+.photo-box {
+  width: min(90%, 350px); /* responsive width with a max cap */
+  max-height: min(80svh, 400px);
+  margin-inline: auto;
+
+  border: 2px solid rgba(0, 0, 0, 0.85);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+.photo-box .photo {
+  width: 80%;
+  height: auto;
+  object-fit: cover; /* crop to fill */
+  object-position: 50% 40%; /* tweak if you want the face higher/lower */
+  transition: transform 0.35s ease;
+}
+.photo-box:hover .photo {
+  transform: scale(1.02);
+}
+.page-revealed {
+  background: #fff;
 }
 @media (max-width: 600px) {
-  section {
+  .section-pad {
     padding: 60px 20px;
+  }
+  .hero-intro {
+    min-height: 220vh;
+  } /* extra runway on short mobile viewports */
+}
+@media (max-height: 780px) {
+  .intro-content {
+    padding: 32px 20px 48px;
   }
 }
 
-/* ---------- Cursor Glow ---------- */
-.glow-cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  width: 300px;
-  height: 300px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 60%);
-  border-radius: 50%;
-  mix-blend-mode: multiply;
-  transition: background 0.3s ease;
-}
-
-/* ---------- Navigation ---------- */
-.bottom-nav {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  border-radius: 30px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  padding: 10px 20px;
-  backdrop-filter: blur(10px);
-}
-.bottom-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.bottom-nav ul li a {
-  color: #444;
-  font-size: 1.4rem;
-  padding: 10px;
-  transition: color 0.3s ease;
-}
-.bottom-nav ul li a:hover,
-.bottom-nav ul li a.active {
-  color: #e63946;
-}
-
-/* ---------- Hero Section ---------- */
-.hero-grid {
-  background: linear-gradient(180deg, #fff 0%, #ffe5c2 40%, #fff 100%);
-  padding: 40px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.hero-grid::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 30%,
-    rgba(255, 255, 255, 0.5),
-    transparent 70%
-  );
-  z-index: 0;
-}
-.hero-text,
-.hero-photo {
-  position: relative;
-  z-index: 1;
-}
-.hero-text h1 {
-  font-style: italic;
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  font-weight: 300;
-  color: #444;
-}
-.hero-name {
-  font-weight: 900;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-  color: #000;
-  display: block;
-  margin-bottom: 20px;
-}
-.hero-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #444;
-}
-.hero-tagline {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 20px;
-  max-width: 420px;
-  line-height: 1.6;
-  min-height: 50px;
-}
-.hero-actions {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.social-icons a {
-  font-size: 1.4rem;
-  color: #333;
-  transition: all 0.3s ease;
-}
-.social-icons a:hover {
-  color: #e63946;
-  transform: translateY(-4px);
-}
-.hero-photo img {
-  max-width: 100%;
-  width: 350px;
-  transform: translateY(0);
-  transition: transform 0.4s ease;
-}
-.hero-photo img:hover {
-  transform: translateY(-6px);
-}
-
-/* ---------- Social Media Section ---------- */
-.strategy-carousel {
-  padding-bottom: 20px;
-}
-.strategy-carousel .swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-.strategy-carousel .card {
-  width: 100%;
-  max-width: 1000px;
-}
-.strategy-carousel img {
-  border: 1px solid #eee;
-  transition: transform 0.2s ease;
-}
-.strategy-carousel img:hover {
-  transform: scale(1.05);
-}
-.carousel-group-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #444;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0;
-}
-.strategy-image-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding-bottom: 8px;
-  scroll-snap-type: x mandatory;
-}
-.strategy-image-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-.strategy-image-scroll::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 3px;
-}
-.strategy-image-scroll-item {
-  height: 250px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  object-fit: cover;
-  border: 1px solid #eee;
-  transition: transform 0.2s ease;
-}
-.strategy-image-scroll-item:hover {
-  transform: scale(1.03);
-}
-
-/* ---------- Reels Section ---------- */
-/* reels ver 1 */
-.reels-wrapper {
-  display: flex;
-  gap: 40px;
-  flex-wrap: nowrap;
-  width: 100%;
-  text-align: center;
-}
-.reels-left {
-  justify-items: center;
-}
-#reels-main-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #333;
-  line-height: 1.3;
-}
-.reels-type {
-  font-size: 14px;
-  color: #aaa;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.reels-subtitle {
-  font-size: 16px;
-}
-.reels-slider-container {
-  position: relative;
-  max-width: 100%;
-  overflow-x: auto;
-  min-height: 420px;
-}
-.reels-swiper .swiper-slide {
-  width: 260px;
-  height: 450px;
-  background: #222;
-  color: white;
-  border-radius: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: transform 0.4s ease, opacity 0.3s;
-  text-align: center;
-  scroll-snap-align: center;
-  opacity: 0.5;
-  transform: scale(0.9);
-  z-index: 0;
-}
-.reels-swiper .swiper-slide.swiper-slide-active {
-  opacity: 1;
-  transform: scale(1);
-}
-.reel-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 14px;
-  z-index: 1;
-  position: relative;
-}
-
-/* reels ver 2 */
-.reels-v2-card {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: #f9f7f3;
-  transition: transform 0.2s ease;
-}
-.reels-v2-card:hover {
-  transform: scale(1.02);
-}
-.reels-v2-card img {
-  width: 100%;
-  height: 420px;
-  display: block;
-}
-.reels-v2-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: white;
-  opacity: 0.8;
-}
-.reels-v2-meta {
-  padding: 0.75rem;
-  text-align: center;
-}
-.reels-v2-meta h5 {
-  font-size: 1rem;
-  margin: 0.5rem 0 0.2rem;
-  font-weight: bold;
-}
-.reels-v2-meta small {
-  color: #555;
-  font-style: italic;
-}
-.horizontal-scroll-wrapper {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch; /* for smoother scrolling on mobile */
-  padding-bottom: 1rem;
-}
-#reelsV2Container .col {
-  flex: 0 0 auto;
-  width: 250px;
-}
-
-/* ---------- Photography Scroll ---------- */
-.photography-scroll {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory;
-}
-.photography-item {
-  flex: 0 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-}
-.photography-item:hover {
-  transform: translateY(-10px);
-}
-.photography-item img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* ---------- Modal ---------- */
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 80vh;
-  border-radius: 8px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-}
-.modal-caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  font-size: 14px;
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.nav-arrow {
-  position: absolute;
-  top: 50%;
-  color: white;
-  font-size: 36px;
-  padding: 20px;
-  cursor: pointer;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-}
-.nav-left {
-  left: 20px;
-}
-.nav-right {
-  right: 20px;
-}
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
   }
 }

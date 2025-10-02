@@ -1,5 +1,5 @@
 import { initTyped } from "./typed-init.js";
-import { setuSocialMedia } from "./social-media.js";
+import { setupSocialMedia } from "./social-media.js";
 import { setupVisualDesign } from "./visual-design.js";
 import { setupRecentWork } from "./gallery.js";
 import { setupReels } from "./reels.js";
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   AOS.init({ once: true, duration: 1000, offset: 100, easing: "ease-in-out" });
 
   initTyped();
-  setuSocialMedia();
+  setupSocialMedia();
   setupVisualDesign();
   setupRecentWork();
   setupReels();
