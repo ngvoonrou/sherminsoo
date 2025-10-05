@@ -1,5 +1,5 @@
-export function setupRecentWork() {
-  fetch("data/gallery.json")
+export function setupFilmsPhotography() {
+  fetch("data/films-photography.json")
     .then((res) => res.json())
     .then((data) => {
       const container = document.getElementById("photographyContainer");
@@ -8,7 +8,7 @@ export function setupRecentWork() {
         const div = document.createElement("div");
         div.className = "photography-item";
         div.innerHTML = `
-          <img src="${item.src}" alt="${item.title}" />
+          <img src="${item.src}" alt="${item.title}" loading="lazy" />
           <div class="photo-meta">
             <div class="photo-index">/ ${String(index + 1).padStart(
               2,
