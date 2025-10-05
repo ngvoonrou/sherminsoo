@@ -1,0 +1,44 @@
+{
+  "updatedAt": "2025-10-05",
+  "stories": [
+    {
+      "id": "foodie",
+      "handle": "@shermin.foodie",
+      "profileName": "shermin.foodie",
+      "url": "https://www.instagram.com/shermin.foodie/",
+      "avatar": "assets/personal-social/avatars/foodie-avatar.jpg",
+      "timeLabel": "• 2h",
+      "media": {
+        "type": "video",
+        "src": "assets/personal-social/stories/foodie.mp4",
+        "poster": "assets/personal-social/stories/foodie-poster.jpg"
+      }
+    },
+    {
+      "id": "shermin",
+      "handle": "@sherminsoo",
+      "profileName": "sherminsoo",
+      "url": "https://www.instagram.com/sherminsoo/",
+      "avatar": "assets/personal-social/avatars/sherminsoo-avatar.jpg",
+      "timeLabel": "• 4h",
+      "media": {
+        "type": "video",
+        "src": "assets/personal-social/stories/shermin.mp4",
+        "poster": "assets/personal-social/stories/shermin-poster.jpg"
+      }
+    },
+    {
+      "id": "bearbear",
+      "handle": "@bearbear.chatroom",
+      "profileName": "bearbear.chatroom",
+      "url": "https://www.instagram.com/bearbear_chatroom/",
+      "avatar": "assets/personal-social/avatars/bearbear.jpg",
+      "timeLabel": "• 1d",
+      "media": {
+        "type": "video",
+        "src": "assets/personal-social/stories/bearbear.mp4",
+        "poster": "assets/personal-social/stories/bearbear-poster.jpg"
+      }
+    }
+  ]
+}

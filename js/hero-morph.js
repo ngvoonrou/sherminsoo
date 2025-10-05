@@ -1,72 +1,73 @@
 // hero-morph.js
+// Sticky-on-element + scale-to-top, and correctly "unfix" when scrolling up.
+
 export function initHeroMorph() {
-  const section = document.getElementById("hero-intro");
-  const heroLogo = document.getElementById("heroLogo");
-  const navLogo = document.getElementById("navLogo");
-  if (!section || !heroLogo || !navLogo) return;
+  const hero = document.getElementById("hero-intro");
+  const wordMark = document.getElementById("wordMark");
+  const navPlaceholder = document.getElementById("navBrandPlaceholder");
+  const navBar = document.querySelector(".brand-navbar");
+  if (!hero || !wordMark || !navPlaceholder || !navBar) return;
 
-  let dx = 0,
-    dy = 0,
-    scale = 1;
+  let startTop = 0; // natural top (centered) distance from viewport top
+  let finalScale = 1; // scale when docked to navbar height
+  let lockAtY = 0; // scrollY at which the H1’s top reaches 0 (hits navbar)
+
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
-  const ease = (t) =>
-    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  const smoothstep = (a, b, x) => {
-    const t = clamp((x - a) / (b - a), 0, 1);
-    return t * t * (3 - 2 * t);
-  };
-
-  function progressThroughSticky() {
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    const top = section.offsetTop;
-    const scrollable = Math.max(1, section.offsetHeight - vh);
-    return clamp((window.scrollY - top) / scrollable, 0, 1);
-  }
 
   function measure() {
-    heroLogo.style.transform = "none";
-    const src = heroLogo.getBoundingClientRect();
-    const dst = navLogo.getBoundingClientRect();
-    const srcX = src.left + src.width / 2;
-    const srcY = src.top + src.height / 2;
-    const dstX = dst.left + dst.width / 2;
-    const dstY = dst.top + dst.height / 2;
-    dx = dstX - srcX;
-    dy = dstY - srcY;
-    scale = dst.height / src.height;
+    const prev = wordMark.style.transform;
+    wordMark.style.transform = "none";
+
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const h1Rect = wordMark.getBoundingClientRect();
+    const baseH = h1Rect.height;
+
+    // H1 is centered by the grid, so its initial top ≈ (vh - height)/2
+    startTop = Math.max(1, (vh - baseH) / 2);
+
+    // Include safe-area via computed padding on the real navbar
+    const navRect = navPlaceholder.getBoundingClientRect();
+    const navStyles = getComputedStyle(navBar);
+    const navPadTop = parseFloat(navStyles.paddingTop) || 0; // env(safe-area-inset-top) on iOS
+    const navH = (navRect.height || 72) + navPadTop;
+
+    finalScale = clamp(navH / baseH, 0.3, 1);
+
+    // The scroll position where the H1 touches the top:
+    // hero’s page-top plus the initial "top" distance of the H1.
+    const heroTopOnPage = hero.getBoundingClientRect().top + window.scrollY;
+    lockAtY = heroTopOnPage + startTop;
+
+    wordMark.style.transform = prev;
     update();
   }
 
   function update() {
-    const raw = progressThroughSticky();
-    const p = ease(raw);
-    const s = 1 + (scale - 1) * p;
-    const tx = dx * p;
-    const ty = dy * p;
+    const y = window.scrollY || window.pageYOffset;
+    const stuck = y >= lockAtY - 1;
 
-    heroLogo.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${s})`;
+    if (stuck) {
+      // keep it fixed at the top even after hero ends
+      if (!wordMark.classList.contains("is-fixed")) {
+        wordMark.classList.add("is-fixed");
+      }
+      wordMark.style.transform = `translateX(-50%) scale(${finalScale})`;
+    } else {
+      // release back into the hero, scale based on current distance to top
+      wordMark.classList.remove("is-fixed");
 
-    const bgOn = raw > 0.02;
-    const navA = smoothstep(0.35, 0.7, raw);
-    const heroA = 1 - smoothstep(0.4, 0.75, raw);
-
-    document.body.classList.toggle("page-revealed", bgOn);
-    document.body.classList.toggle("navbar-active", navA > 0.25);
-    navLogo.style.opacity = String(navA);
-    heroLogo.style.opacity = String(heroA);
-
-    if (raw >= 0.98) {
-      navLogo.style.opacity = "1";
-      heroLogo.style.opacity = "0";
-      document.body.classList.add("page-revealed", "navbar-active");
+      // While not stuck, scale smoothly from centered -> navbar size.
+      const currentTop = clamp(lockAtY - y, 0, startTop); // 0..startTop
+      const p = clamp(currentTop / startTop, 0, 1); // 0..1
+      const s = finalScale + (1 - finalScale) * p;
+      wordMark.style.transform = `scale(${s})`;
     }
-    if (raw <= 0.01) {
-      navLogo.style.opacity = "0";
-      heroLogo.style.opacity = "1";
-      document.body.classList.remove("navbar-active");
-    }
+
+    document.body.classList.toggle("page-revealed", stuck);
+    document.body.classList.toggle("navbar-active", stuck);
   }
 
+  // rAF-throttled scroll
   let ticking = false;
   function onScroll() {
     if (!ticking) {
@@ -90,18 +91,19 @@ export function initHeroMorph() {
   window.addEventListener("resize", initMeasure, { passive: true });
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Reduced motion: snap logic
+  // Reduced motion: snap
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     window.addEventListener(
       "scroll",
       () => {
-        const p = progressThroughSticky();
-        const inHeader = p > 0.2;
-        document.body.classList.toggle("page-revealed", inHeader);
-        document.body.classList.toggle("navbar-active", inHeader);
-        navLogo.style.opacity = inHeader ? "1" : "0";
-        heroLogo.style.opacity = inHeader ? "0" : "1";
-        heroLogo.style.transform = "none";
+        const y = window.scrollY || window.pageYOffset;
+        const stuck = y >= lockAtY;
+        wordMark.classList.toggle("is-fixed", stuck);
+        wordMark.style.transform = stuck
+          ? `translateX(-50%) scale(${finalScale})`
+          : "none";
+        document.body.classList.toggle("page-revealed", stuck);
+        document.body.classList.toggle("navbar-active", stuck);
       },
       { passive: true }
     );
