@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
       rel="stylesheet"
     />
 
@@ -63,9 +63,15 @@
     </section>
 
     <!-- Intro Section -->
-    <section id="intro" class="container section-pad">
+    <section id="intro" class="container">
       <div class="intro-content container">
-        <div class="row align-items-center">
+        <div
+          class="row align-items-center"
+          style="
+            border-bottom: 1px solid rgba(61, 47, 42, 0.06);
+            margin: 80px 0;
+          "
+        >
           <div class="col-md-6 intro-text">
             <p class="intro-title">Digital Marketer &amp; Visual Storyteller</p>
             <p class="intro-tagline">
@@ -139,6 +145,28 @@
       </div>
     </section>
 
+    <!-- Company Section -->
+    <section
+      id="company"
+      class="container section-pad"
+      aria-labelledby="companyTitle"
+    >
+      <h2 id="companyTitle" class="sr-only">Companies & Engagements</h2>
+
+      <!-- Company stacked layout -->
+      <div class="company-stack">
+        <!-- JS will render categories here -->
+        <div
+          id="companyStackInner"
+          class="company-stack-inner"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <div class="stack-empty">Loading…</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Proven Success -->
     <section id="proven-success" class="container section-pad">
       <h2>Proven Success</h2>
@@ -149,9 +177,9 @@
       ></div>
     </section>
 
-    <!-- Films Photography -->
+    <!-- Film Photography -->
     <section id="photography" class="container photography-section">
-      <h2>Films Photography</h2>
+      <h2>Film Photography</h2>
       <div class="photography-scroll" id="photographyContainer"></div>
     </section>
 

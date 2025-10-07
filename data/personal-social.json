@@ -10,7 +10,7 @@
       "timeLabel": "• 2h",
       "media": {
         "type": "video",
-        "src": "assets/personal-social/stories/foodie.mp4",
+        "src": "assets/personal-social/stories/example-1.MOV",
         "poster": "assets/personal-social/stories/foodie-poster.jpg"
       }
     },
@@ -23,7 +23,7 @@
       "timeLabel": "• 4h",
       "media": {
         "type": "video",
-        "src": "assets/personal-social/stories/shermin.mp4",
+        "src": "assets/personal-social/stories/example-2.mp4",
         "poster": "assets/personal-social/stories/shermin-poster.jpg"
       }
     },
@@ -36,7 +36,7 @@
       "timeLabel": "• 1d",
       "media": {
         "type": "video",
-        "src": "assets/personal-social/stories/bearbear.mp4",
+        "src": "assets/personal-social/stories/example-3.mp4",
         "poster": "assets/personal-social/stories/bearbear-poster.jpg"
       }
     }
