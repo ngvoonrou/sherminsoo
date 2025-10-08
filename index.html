@@ -63,59 +63,88 @@
     </section>
 
     <!-- Intro Section -->
-    <section id="intro" class="container">
-      <div class="intro-content container">
-        <div
-          class="row align-items-center"
-          style="
-            border-bottom: 1px solid rgba(61, 47, 42, 0.06);
-            margin: 80px 0;
-          "
-        >
-          <div class="col-md-6 intro-text">
-            <p class="intro-title">Digital Marketer &amp; Visual Storyteller</p>
-            <p class="intro-tagline">
-              I create social strategies, visuals, and videos that elevate
-              brands and drive meaningful growth.
-            </p>
+    <section id="intro" class="intro-hero" aria-label="Intro">
+      <!-- large script heading -->
+      <div class="script-hey-wrap" aria-hidden="true">
+        <span class="script-hey left">Hey,</span>
+        <span class="script-hey right">there</span>
+      </div>
 
-            <div class="social-icons d-flex gap-3">
-              <a
-                href="https://www.linkedin.com/in/shermin-soo/"
-                target="_blank"
-                title="LinkedIn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/sherminsoo"
-                target="_blank"
-                title="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </div>
+      <div class="intro-shell container">
+        <!-- LEFT: badges + links -->
+        <aside class="intro-left">
+          <div class="social-wrap">
+            <a
+              href="https://www.linkedin.com/in/shermin-soo/"
+              target="_blank"
+              class="social-circle"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/sherminsoo"
+              target="_blank"
+              class="social-circle"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="mailto:sherminsoo@gmail.com"
+              class="social-circle"
+              aria-label="Email"
+            >
+              <i class="fa-regular fa-envelope"></i>
+            </a>
           </div>
 
-          <div class="col-md-6 intro-photo text-center">
-            <div class="photo-box">
-              <img
-                src="assets/profile_pic/shermin-soo2.png"
-                alt="Shermin Soo"
-                class="img-fluid"
-              />
-            </div>
+          <a
+            href="assets/resume/Shermin_Soo_Resume.pdf"
+            class="btn-resume"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Download my resume</span>
+            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+          </a>
+
+          <div class="badge-pill">BRAND<br />STORYTELLER</div>
+          <div class="badge-pill">CONTENT<br />STRATEGIST</div>
+        </aside>
+
+        <!-- CENTER: portrait -->
+        <div class="intro-center">
+          <div class="portrait">
+            <img
+              src="assets/profile_pic/shermin-soo2.png"
+              alt="Shermin Soo portrait"
+            />
           </div>
+        </div>
+
+        <!-- RIGHT: copy -->
+        <div class="intro-right">
+          <p class="intro-blurb">
+            I’m a versatile marketer who creates content that sparks connection
+            and drives meaningful growth.
+          </p>
+
+          <h2 class="stacked-headline">
+            <span>INTEGRATED</span>
+            <span>DIGITAL</span>
+            <span>MARKETER</span>
+          </h2>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="container section-pad">
-      <h2>About Me</h2>
+      <h2>My Area of Focus</h2>
       <p>
-        I am Shermin Soo, a versatile marketer with a proven track record in
-        digital content creation and project marketing. I optimize brand
-        visibility, collaborate across teams and vendors, and deliver measurable
-        growth in hospitality and real estate.
+        The behind-the-scenes of every great story. Watch all the hats I wear
+        roll by below.
       </p>
 
       <!-- Marquee -->
@@ -132,13 +161,13 @@
               PS)
             </li>
             <li class="marquee__item">
-              Video Production &amp; Editing (iMovie, Capcut)
+              Video Production &amp; Editing (iMovie, Capcut, Edits)
             </li>
             <li class="marquee__item">
               Web Content Management (WordPress) &amp; eDM System (Spread)
             </li>
             <li class="marquee__item">Project Management</li>
-            <li class="marquee__item">Cross-Functional Team Collaboration</li>
+            <li class="marquee__item">KOL Outreach & Collaboration</li>
           </ul>
           <ul class="marquee__group" aria-hidden="true"></ul>
         </div>
@@ -146,12 +175,12 @@
     </section>
 
     <!-- Company Section -->
-    <section
-      id="company"
-      class="container section-pad"
-      aria-labelledby="companyTitle"
-    >
-      <h2 id="companyTitle" class="sr-only">Companies & Engagements</h2>
+    <section id="company" class="container section-pad">
+      <h2>Proven Success</h2>
+      <p>
+        Collaborations in Hospitality, Real Estate, Lifestyle and Leadership
+        Branding - click on any logo to dive into the projects.
+      </p>
 
       <!-- Company stacked layout -->
       <div class="company-stack">
@@ -168,24 +197,34 @@
     </section>
 
     <!-- Proven Success -->
-    <section id="proven-success" class="container section-pad">
+    <!-- <section id="proven-success" class="container section-pad">
       <h2>Proven Success</h2>
       <div
         id="provenMosaic"
         class="mosaic"
         aria-label="Proven Success gallery"
       ></div>
-    </section>
+    </section> -->
 
     <!-- Film Photography -->
-    <section id="photography" class="container photography-section">
+    <section id="photography" class="container section-pad">
       <h2>Film Photography</h2>
+      <p>
+        I love capturing stories on film – the kind that happens quietly between
+        people, cities and light. And yes, it’s all about that nostalgic
+        feeling.
+      </p>
       <div class="photography-scroll" id="photographyContainer"></div>
     </section>
 
     <!-- Personal Social Media (JSON-driven mount ONLY) -->
     <section id="personal-social" class="container section-pad">
-      <h2>Personal Social</h2>
+      <h2>Beyond Work - My Creative Corners</h2>
+      <p>
+        Off the clock? I'm probably café-hopping, exploring new bites, or
+        sharing random thoughts about life on my podcast. Here is the peek into
+        the stuff I do just for fun (and sanity). ☕🎙️💭
+      </p>
       <div
         class="stories"
         id="storiesStrip"
