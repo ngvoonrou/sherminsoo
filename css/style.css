@@ -557,8 +557,8 @@ p {
   border-radius: 16px;
 }
 .company-logo-img {
-  width: 85%;
-  height: 85%;
+  width: 90%;
+  height: auto;
   object-fit: contain;
   display: block;
   filter: saturate(0.96) contrast(1.02);
