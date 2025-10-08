@@ -6,15 +6,48 @@ function getParam(name) {
 function makeItem(photo, index) {
   const wrap = document.createElement("figure");
   wrap.className = "gallery-item";
-  wrap.innerHTML = `
-    <img src="${photo.src}" alt="${
-    photo.title || `Photo ${index + 1}`
-  }" loading="lazy" decoding="async" />
-    <figcaption class="gallery-meta">
-      <span>${photo.title || ""}</span>
-      <span>${photo.year || ""}</span>
-    </figcaption>
-  `;
+
+  const title = photo.title || `Photo ${index + 1}`;
+  const year = photo.year || "";
+
+  // Image
+  const img = document.createElement("img");
+  img.src = photo.src;
+  img.alt = title;
+  img.loading = "lazy";
+  img.decoding = "async";
+
+  // Bottom overlay (appears on hover/focus)
+  const overlay = document.createElement("div");
+  overlay.className = "gallery-overlay";
+  overlay.innerHTML = `<span>${title}</span><span style="opacity:.85">${year}</span>`;
+
+  // Hidden figcaption (kept for semantics; you can remove if you like)
+  const meta = document.createElement("figcaption");
+  meta.className = "gallery-meta";
+  meta.innerHTML = `<span>${title}</span><span>${year}</span>`;
+
+  // Clickable layer (keyboard accessible)
+  const cta = document.createElement("button");
+  cta.className = "gallery-cta";
+  cta.type = "button";
+  cta.setAttribute("aria-label", `Enlarge ${title}`);
+
+  // Attach
+  wrap.appendChild(img);
+  wrap.appendChild(overlay);
+  wrap.appendChild(meta);
+  wrap.appendChild(cta);
+
+  // Lightbox hook
+  cta.addEventListener("click", () => openLightbox(photo.src, title, year));
+  cta.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openLightbox(photo.src, title, year);
+    }
+  });
+
   return wrap;
 }
 
@@ -57,3 +90,46 @@ async function renderGallery() {
 }
 
 renderGallery();
+
+// ===== Simple Lightbox =====
+const lb = (() => {
+  const el = document.getElementById("lightbox");
+  const img = el.querySelector(".lb-img");
+  const cap = el.querySelector(".lb-caption");
+  const closeBtn = el.querySelector(".lb-close");
+
+  function open(src, title, year) {
+    img.src = src;
+    img.alt = title || "";
+    cap.textContent = [title, year].filter(Boolean).join(" • ");
+    el.classList.add("is-open");
+    el.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+
+  function close() {
+    el.classList.remove("is-open");
+    el.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    // Avoid keeping large image in memory if not needed:
+    img.src = "";
+  }
+
+  // backdrop click
+  el.addEventListener("click", (e) => {
+    if (e.target === el) close();
+  });
+  // close button
+  closeBtn.addEventListener("click", close);
+  // ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && el.classList.contains("is-open")) close();
+  });
+
+  return { open, close };
+})();
+
+function openLightbox(src, title, year) {
+  lb.open(src, title, year);
+}
