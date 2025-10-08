@@ -59,6 +59,7 @@
     <section id="hero-intro" class="hero-intro" aria-label="Intro">
       <div class="hero-intro__sticky" aria-hidden="false">
         <h1 class="hero-logo" id="wordMark">Shermin&nbsp;Soo</h1>
+        <p>A Collection of Digital Stories Bringing Brands to Life</p>
       </div>
     </section>
 
@@ -179,32 +180,18 @@
       <h2>Proven Success</h2>
       <p>
         Collaborations in Hospitality, Real Estate, Lifestyle and Leadership
-        Branding - click on any logo to dive into the projects.
+        Branding — click on any logo to dive into the projects.
       </p>
 
-      <!-- Company stacked layout -->
-      <div class="company-stack">
-        <!-- JS will render categories here -->
-        <div
-          id="companyStackInner"
-          class="company-stack-inner"
-          aria-live="polite"
-          aria-busy="true"
-        >
-          <div class="stack-empty">Loading…</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Proven Success -->
-    <!-- <section id="proven-success" class="container section-pad">
-      <h2>Proven Success</h2>
+      <!-- All company logos: 4 per row -->
       <div
-        id="provenMosaic"
-        class="mosaic"
-        aria-label="Proven Success gallery"
+        id="companyGrid"
+        class="company-grid"
+        aria-live="polite"
+        aria-busy="true"
+        role="list"
       ></div>
-    </section> -->
+    </section>
 
     <!-- Film Photography -->
     <section id="photography" class="container section-pad">
@@ -214,7 +201,14 @@
         people, cities and light. And yes, it’s all about that nostalgic
         feeling.
       </p>
-      <div class="photography-scroll" id="photographyContainer"></div>
+
+      <!-- 2x2 grid of countries -->
+      <div
+        id="filmCovers"
+        class="film-covers"
+        aria-live="polite"
+        aria-busy="true"
+      ></div>
     </section>
 
     <!-- Personal Social Media (JSON-driven mount ONLY) -->

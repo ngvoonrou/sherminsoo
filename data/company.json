@@ -1,59 +1,50 @@
 [
   {
-    "name": "Personal Branding",
-    "key": "personal",
     "items": [
-      {
-        "logo": "assets/company-logos/vanke-club.png",
-        "alt": "Personal logo 1",
-        "link": null
-      },
-      {
-        "logo": "assets/company-logos/hk-life.png",
-        "alt": "Personal logo 2",
-        "link": null
-      }
-    ]
-  },
-  {
-    "name": "Hotel & Serviced Apartments",
-    "key": "hotel",
-    "items": [
-      {
-        "logo": "assets/company-logos/lanson-place.png",
-        "alt": "Hotel 1",
-        "link": "#"
-      },
       {
         "logo": "assets/company-logos/shangri-La.png",
-        "alt": "Hotel 2",
+        "alt": "Shangri La",
         "link": "#"
       },
       {
-        "logo": "assets/company-logos/logo-mrhk.svg",
-        "alt": "Hotel 3",
+        "logo": "assets/company-logos/lanson-place.png",
+        "alt": "Lanson Place",
+        "link": "#"
+      },
+      {
+        "logo": "assets/company-logos/IHG.png",
+        "alt": "IHG Hotels & Resorts",
         "link": "#"
       },
       {
         "logo": "assets/company-logos/the-stellar.png",
-        "alt": "Hotel 4",
-        "link": "#"
-      }
-    ]
-  },
-  {
-    "name": "Residential Project",
-    "key": "residential",
-    "items": [
-      {
-        "logo": "assets/company-logos/bondlane-i.png",
-        "alt": "Residential 1",
+        "alt": "The Stellar",
         "link": "#"
       },
       {
-        "logo": "assets/company-logos/bondlane-ii.png",
-        "alt": "Residential 2",
+        "logo": "assets/company-logos/the-luna.png",
+        "alt": "The Luna",
         "link": "#"
+      },
+      {
+        "logo": "assets/company-logos/lemont_logo.png",
+        "alt": "Lemont",
+        "link": "#"
+      },
+      {
+        "logo": "assets/company-logos/BL1.png",
+        "alt": "Bondlane I",
+        "link": "#"
+      },
+      {
+        "logo": "assets/company-logos/BL2.png",
+        "alt": "Bondlane II",
+        "link": "#"
+      },
+      {
+        "logo": "assets/company-logos/vanke-club.png",
+        "alt": "Vanke Club",
+        "link": null
       }
     ]
   }

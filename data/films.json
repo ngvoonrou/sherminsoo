@@ -1,0 +1,101 @@
+{
+  "countries": [
+    {
+      "key": "hong-kong",
+      "name": "Hong Kong",
+      "desc": "Stories from Hong Kong — sea light, tight streets, and that soft night glow.",
+      "cover": "assets/films/covers/hk-cover.jpg",
+      "photos": [
+        {
+          "src": "assets/films/landscape/Nam Cheong 1.jpeg",
+          "title": "Nam Cheong",
+          "year": 2021
+        },
+        {
+          "src": "assets/films/landscape/Nam Cheong 2.jpeg",
+          "title": "Nam Cheong",
+          "year": 2021
+        },
+        {
+          "src": "assets/films/landscape/Sai Wan.JPG",
+          "title": "Sai Wan",
+          "year": 2025
+        },
+        {
+          "src": "assets/films/landscape/West Kowloon.jpeg",
+          "title": "West Kowloon",
+          "year": 2025
+        }
+      ]
+    },
+    {
+      "key": "japan",
+      "name": "Japan",
+      "desc": "Quiet frames from Japan — shrines, stations, and mountain air.",
+      "cover": "assets/films/covers/jp-cover.jpg",
+      "photos": [
+        {
+          "src": "assets/films/portraits/Asakusa.jpg",
+          "title": "Asakusa",
+          "year": 2025
+        },
+        {
+          "src": "assets/films/portraits/Fujisan 2.jpg",
+          "title": "Fujisan",
+          "year": 2025
+        },
+        {
+          "src": "assets/films/portraits/Fujisan.jpg",
+          "title": "Fujisan",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "key": "taiwan",
+      "name": "Taiwan",
+      "desc": "Wind, cliffs, and coastal trains.",
+      "cover": "assets/films/covers/tw-cover.jpg",
+      "photos": [
+        {
+          "src": "assets/films/landscape/Hualien.jpg",
+          "title": "Hualien",
+          "year": 2021
+        }
+      ]
+    },
+    {
+      "key": "vietnam",
+      "name": "Vietnam",
+      "desc": "Hoi An’s warm evenings and slow river light.",
+      "cover": "assets/films/covers/vn-cover.jpg",
+      "photos": [
+        {
+          "src": "assets/films/portraits/Hoi An 1.jpeg",
+          "title": "Hoi An",
+          "year": 2024
+        },
+        {
+          "src": "assets/films/portraits/Hoi An 2.jpeg",
+          "title": "Hoi An",
+          "year": 2024
+        },
+        {
+          "src": "assets/films/portraits/Hoi An 3.jpeg",
+          "title": "Hoi An",
+          "year": 2024
+        },
+        {
+          "src": "assets/films/portraits/Hoi An 4.jpg",
+          "title": "Hoi An",
+          "year": 2024
+        },
+        {
+          "src": "assets/films/portraits/Hoi An 5.jpg",
+          "title": "Hoi An 2",
+          "year": 2024
+        }
+      ]
+    }
+  ]
+}

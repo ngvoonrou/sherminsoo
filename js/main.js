@@ -1,18 +1,16 @@
-import { renderProvenSuccess } from "./proven-success.js";
-import { setupFilmsPhotography } from "./films-photography.js";
+import { renderFilmCovers } from "./films-index.js";
 import { initCursor } from "./cursor.js";
 import { initHeroMorph } from "./hero-morph.js";
 import { initMarquee } from "./marquee.js";
 import { initPersonalMedia } from "./personal-social.js";
-import { renderCompanyStack } from "./company-home.js";
+import { renderCompanyGrid } from "./company-grid.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderProvenSuccess();
-  setupFilmsPhotography();
+  renderFilmCovers();
   initHeroMorph();
   initMarquee();
   initPersonalMedia("#storiesStrip", "data/personal-social.json");
-  renderCompanyStack("#companyStackInner", "data/company.json");
+  renderCompanyGrid("#companyGrid");
 
   initCursor({
     ringSize: 36,
