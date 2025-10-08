@@ -546,7 +546,6 @@ p {
 .company-card {
   display: grid;
   place-items: center;
-  aspect-ratio: 1 / 1;
 }
 .company-card:hover,
 .company-card:focus-within {
@@ -558,8 +557,12 @@ p {
   border-radius: 16px;
 }
 .company-logo-img {
-  width: 80%;
-  height: auto;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  display: block;
+  filter: saturate(0.96) contrast(1.02);
+  transition: transform 0.22s ease, opacity 0.22s ease, filter 0.22s ease;
   object-fit: contain;
   display: block;
   filter: saturate(0.96) contrast(1.02);
