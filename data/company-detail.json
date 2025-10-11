@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "shangrila",
+    "name": "Shangri-La",
+    "summary": "Led content strategy across hotel campaigns including dining and festive, integrating bilingual copywriting and influencer collabs.",
+    "hero": "assets/company-heroes/shangrila-hero.jpg",
+    "highlights": [
+      "Bilingual campaign copy (EN & ZH)",
+      "Seasonal campaign microsite content",
+      "Influencer outreach & coordination"
+    ],
+    "gallery": [
+      "assets/company-gallery/shangrila-1.jpg",
+      "assets/company-gallery/shangrila-2.jpg",
+      "assets/company-gallery/shangrila-3.jpg"
+    ],
+    "website": "https://www.shangri-la.com/"
+  },
+  {
+    "slug": "lanson-place",
+    "name": "Lanson Place",
+    "summary": "Quarterly content calendar, hotel promos and lifestyle partnerships to grow direct booking funnels.",
+    "hero": "assets/company-heroes/lanson-hero.jpg",
+    "highlights": [
+      "Direct booking uplift",
+      "Lifestyle collabs",
+      "Photo-brief & curation"
+    ],
+    "gallery": [
+      "assets/company-gallery/lanson-1.jpg",
+      "assets/company-gallery/lanson-2.jpg"
+    ]
+  }
+]

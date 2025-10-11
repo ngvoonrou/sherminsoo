@@ -4,47 +4,56 @@
       {
         "logo": "assets/company-logos/shangrila.png",
         "alt": "Shangri La",
-        "link": "#"
+        "slug": "shangrila",
+        "link": "company.html?slug=shangrila"
       },
       {
         "logo": "assets/company-logos/lansonplace.png",
         "alt": "Lanson Place",
-        "link": "#"
+        "slug": "lanson-place",
+        "link": "company.html?slug=lanson-place"
       },
       {
         "logo": "assets/company-logos/ihg-logo.png",
         "alt": "IHG Hotels & Resorts",
-        "link": "#"
+        "slug": "ihg",
+        "link": "company.html?slug=ihg"
       },
       {
         "logo": "assets/company-logos/thestellar.png",
         "alt": "The Stellar",
-        "link": "#"
+        "slug": "the-stellar",
+        "link": "company.html?slug=the-stellar"
       },
       {
         "logo": "assets/company-logos/theluna.png",
         "alt": "The Luna",
-        "link": "#"
+        "slug": "the-luna",
+        "link": "company.html?slug=the-luna"
       },
       {
         "logo": "assets/company-logos/lemont.png",
         "alt": "Lemont",
-        "link": "#"
+        "slug": "lemont",
+        "link": "company.html?slug=lemont"
       },
       {
         "logo": "assets/company-logos/bondlane-i.png",
         "alt": "Bondlane I",
-        "link": "#"
+        "slug": "bondlane-i",
+        "link": "company.html?slug=bondlane-i"
       },
       {
         "logo": "assets/company-logos/bondlane-ii.png",
         "alt": "Bondlane II",
-        "link": "#"
+        "slug": "bondlane-ii",
+        "link": "company.html?slug=bondlane-ii"
       },
       {
         "logo": "assets/company-logos/vanke.png",
         "alt": "Vanke Club",
-        "link": null
+        "slug": "vanke-club",
+        "link": "company.html?slug=vanke-club"
       }
     ]
   }

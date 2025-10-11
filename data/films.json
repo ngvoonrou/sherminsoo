@@ -52,6 +52,19 @@
       ]
     },
     {
+      "key": "china",
+      "name": "China",
+      "desc": "China desc...",
+      "cover": "assets/films/covers/cn-cover.jpeg",
+      "photos": [
+        {
+          "src": "assets/films/portraits/Shanghai.jpeg",
+          "title": "Shanghai",
+          "year": 2024
+        }
+      ]
+    },
+    {
       "key": "taiwan",
       "name": "Taiwan",
       "desc": "Wind, cliffs, and coastal trains.",
@@ -60,6 +73,11 @@
         {
           "src": "assets/films/landscape/Hualien.jpg",
           "title": "Hualien",
+          "year": 2021
+        },
+        {
+          "src": "assets/films/portraits/Taipei.jpg",
+          "title": "Taipei",
           "year": 2021
         }
       ]
@@ -72,27 +90,37 @@
       "photos": [
         {
           "src": "assets/films/portraits/Hoi An 1.jpeg",
-          "title": "Hoi An",
+          "title": "Hoi An 1",
           "year": 2024
         },
         {
           "src": "assets/films/portraits/Hoi An 2.jpeg",
-          "title": "Hoi An",
+          "title": "Hoi An 2",
           "year": 2024
         },
         {
           "src": "assets/films/portraits/Hoi An 3.jpeg",
-          "title": "Hoi An",
+          "title": "Hoi An 3",
           "year": 2024
         },
         {
           "src": "assets/films/portraits/Hoi An 4.jpg",
-          "title": "Hoi An",
+          "title": "Hoi An 4",
           "year": 2024
         },
         {
           "src": "assets/films/portraits/Hoi An 5.jpg",
-          "title": "Hoi An 2",
+          "title": "Hoi An 5",
+          "year": 2024
+        },
+        {
+          "src": "assets/films/portraits/Hoi An 6.jpg",
+          "title": "Hoi An 6",
+          "year": 2024
+        },
+        {
+          "src": "assets/films/portraits/Hoi An 7.jpg",
+          "title": "Hoi An 7",
           "year": 2024
         }
       ]
@@ -104,29 +132,14 @@
       "cover": "assets/films/covers/my-cover.JPEG",
       "photos": [
         {
-          "src": "assets/films/portraits/Hoi An 1.jpeg",
-          "title": "Hoi An",
-          "year": 2024
+          "src": "assets/films/portraits/Kuala Lumpur 1.jpeg",
+          "title": "Kuala Lumpur 1",
+          "year": 2025
         },
         {
-          "src": "assets/films/portraits/Hoi An 2.jpeg",
-          "title": "Hoi An",
-          "year": 2024
-        },
-        {
-          "src": "assets/films/portraits/Hoi An 3.jpeg",
-          "title": "Hoi An",
-          "year": 2024
-        },
-        {
-          "src": "assets/films/portraits/Hoi An 4.jpg",
-          "title": "Hoi An",
-          "year": 2024
-        },
-        {
-          "src": "assets/films/portraits/Hoi An 5.jpg",
-          "title": "Hoi An 2",
-          "year": 2024
+          "src": "assets/films/portraits/Kuala Lumpur 2.jpeg",
+          "title": "Kuala Lumpur 2",
+          "year": 2025
         }
       ]
     }
