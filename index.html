@@ -59,7 +59,9 @@
     <section id="hero-intro" class="hero-intro" aria-label="Intro">
       <div class="hero-intro__sticky" aria-hidden="false">
         <h1 class="hero-logo" id="wordMark">Shermin&nbsp;Soo</h1>
-        <p>A Collection of Digital Stories Bringing Brands to Life</p>
+        <p class="hero-text">
+          A Collection of Digital Stories Bringing Brands to Life
+        </p>
       </div>
     </section>
 
@@ -92,7 +94,7 @@
               <i class="fab fa-instagram"></i>
             </a>
             <a
-              href="mailto:sherminsoo@gmail.com"
+              href="mailto:sherminsys519@gmail.com"
               class="social-circle"
               aria-label="Email"
             >
@@ -107,7 +109,7 @@
             rel="noopener"
           >
             <span>Download my resume</span>
-            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+            <i class="fa-solid fa-download"></i>
           </a>
 
           <div class="badge-pill">BRAND<br />STORYTELLER</div>
@@ -201,13 +203,35 @@
         people, cities and light.
       </p>
 
-      <!-- 2x2 grid of countries -->
       <div
-        id="filmCovers"
-        class="film-covers"
-        aria-live="polite"
-        aria-busy="true"
-      ></div>
+        class="film-carousel"
+        id="filmCarousel"
+        aria-roledescription="carousel"
+      >
+        <button class="fc-btn prev" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div
+          class="fc-viewport"
+          id="filmViewport"
+          tabindex="0"
+          role="group"
+          aria-label="Film destinations"
+        >
+          <div
+            class="fc-track"
+            id="filmTrack"
+            role="list"
+            aria-live="polite"
+            aria-busy="true"
+          ></div>
+        </div>
+
+        <button class="fc-btn next" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
     </section>
 
     <!-- Personal Social Media (JSON-driven mount ONLY) -->
@@ -216,8 +240,6 @@
       <p>
         Off the clock? I'm probably café-hopping, exploring new bites, or
         sharing random thoughts about life on my podcast.
-        <br />Here is the peek into the stuff I do just for fun (and sanity).
-        ☕🎙️💭
       </p>
       <div
         class="stories"

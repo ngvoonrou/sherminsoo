@@ -7,24 +7,20 @@
       "cover": "assets/films/covers/hk-cover-1.JPEG",
       "photos": [
         {
-          "src": "assets/films/landscape/Nam Cheong 1.jpeg",
-          "title": "Nam Cheong",
-          "year": 2021
+          "src": "assets/films/hongkong/Nam Cheong 1.jpeg",
+          "title": "Nam Cheong"
         },
         {
-          "src": "assets/films/landscape/Nam Cheong 2.jpeg",
-          "title": "Nam Cheong",
-          "year": 2021
+          "src": "assets/films/hongkong/Nam Cheong 2.jpeg",
+          "title": "Nam Cheong"
         },
         {
-          "src": "assets/films/landscape/Sai Wan.JPG",
-          "title": "Sai Wan",
-          "year": 2025
+          "src": "assets/films/hongkong/Sai Wan.JPG",
+          "title": "Sai Wan"
         },
         {
-          "src": "assets/films/landscape/West Kowloon.jpeg",
-          "title": "West Kowloon",
-          "year": 2025
+          "src": "assets/films/hongkong/West Kowloon.jpeg",
+          "title": "West Kowloon"
         }
       ]
     },
@@ -35,50 +31,16 @@
       "cover": "assets/films/covers/jp-cover.JPG",
       "photos": [
         {
-          "src": "assets/films/portraits/Asakusa.jpg",
-          "title": "Asakusa",
-          "year": 2025
+          "src": "assets/films/japan/Asakusa.jpg",
+          "title": "Asakusa"
         },
         {
-          "src": "assets/films/portraits/Fujisan 2.jpg",
-          "title": "Fujisan",
-          "year": 2025
+          "src": "assets/films/japan/Fujisan 2.jpg",
+          "title": "Fujisan"
         },
         {
-          "src": "assets/films/portraits/Fujisan.jpg",
-          "title": "Fujisan",
-          "year": 2024
-        }
-      ]
-    },
-    {
-      "key": "china",
-      "name": "China",
-      "desc": "China desc...",
-      "cover": "assets/films/covers/cn-cover.jpeg",
-      "photos": [
-        {
-          "src": "assets/films/portraits/Shanghai.jpeg",
-          "title": "Shanghai",
-          "year": 2024
-        }
-      ]
-    },
-    {
-      "key": "taiwan",
-      "name": "Taiwan",
-      "desc": "Wind, cliffs, and coastal trains.",
-      "cover": "assets/films/covers/tw-cover.JPG",
-      "photos": [
-        {
-          "src": "assets/films/landscape/Hualien.jpg",
-          "title": "Hualien",
-          "year": 2021
-        },
-        {
-          "src": "assets/films/portraits/Taipei.jpg",
-          "title": "Taipei",
-          "year": 2021
+          "src": "assets/films/japan/Fujisan.jpg",
+          "title": "Fujisan"
         }
       ]
     },
@@ -89,39 +51,48 @@
       "cover": "assets/films/covers/vn-cover-1.JPEG",
       "photos": [
         {
-          "src": "assets/films/portraits/Hoi An 1.jpeg",
-          "title": "Hoi An 1",
-          "year": 2024
+          "src": "assets/films/vietnam/Hoi An 1.jpeg",
+          "title": "Hoi An"
         },
         {
-          "src": "assets/films/portraits/Hoi An 2.jpeg",
-          "title": "Hoi An 2",
-          "year": 2024
+          "src": "assets/films/vietnam/Hoi An 2.jpeg",
+          "title": "Hoi An"
         },
         {
-          "src": "assets/films/portraits/Hoi An 3.jpeg",
-          "title": "Hoi An 3",
-          "year": 2024
+          "src": "assets/films/vietnam/Hoi An 3.jpeg",
+          "title": "Hoi An"
         },
         {
-          "src": "assets/films/portraits/Hoi An 4.jpg",
-          "title": "Hoi An 4",
-          "year": 2024
+          "src": "assets/films/vietnam/Hoi An 4.jpg",
+          "title": "Hoi An"
         },
         {
-          "src": "assets/films/portraits/Hoi An 5.jpg",
-          "title": "Hoi An 5",
-          "year": 2024
+          "src": "assets/films/vietnam/Hoi An 5.jpg",
+          "title": "Hoi An"
         },
         {
-          "src": "assets/films/portraits/Hoi An 6.jpg",
-          "title": "Hoi An 6",
-          "year": 2024
+          "src": "assets/films/vietnam/Hoi An 6.jpg",
+          "title": "Hoi An"
         },
         {
-          "src": "assets/films/portraits/Hoi An 7.jpg",
-          "title": "Hoi An 7",
-          "year": 2024
+          "src": "assets/films/vietnam/Hoi An 7.jpg",
+          "title": "Hoi An"
+        }
+      ]
+    },
+    {
+      "key": "taiwan",
+      "name": "Taiwan",
+      "desc": "Wind, cliffs, and coastal trains.",
+      "cover": "assets/films/covers/tw-cover.JPG",
+      "photos": [
+        {
+          "src": "assets/films/taiwan/Hualien.jpg",
+          "title": "Hualien"
+        },
+        {
+          "src": "assets/films/taiwan/Taipei.jpg",
+          "title": "Taipei"
         }
       ]
     },
@@ -132,14 +103,100 @@
       "cover": "assets/films/covers/my-cover.JPEG",
       "photos": [
         {
-          "src": "assets/films/portraits/Kuala Lumpur 1.jpeg",
-          "title": "Kuala Lumpur 1",
-          "year": 2025
+          "src": "assets/films/malaysia/Kuala Lumpur 1.jpeg",
+          "title": "Kuala Lumpur 1"
         },
         {
-          "src": "assets/films/portraits/Kuala Lumpur 2.jpeg",
-          "title": "Kuala Lumpur 2",
-          "year": 2025
+          "src": "assets/films/malaysia/Kuala Lumpur 2.jpeg",
+          "title": "Kuala Lumpur 2"
+        }
+      ]
+    },
+    {
+      "key": "china",
+      "name": "China",
+      "desc": "China desc...",
+      "cover": "assets/films/covers/cn-cover.jpg",
+      "photos": [
+        {
+          "src": "assets/films/china/sh-1.jpg",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/sh-2.jpg",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/sh-3.jpg",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/sh-4.jpg",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/sh-5.JPEG",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/sh-6.jpg",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/sh-7.jpg",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/sh-8.JPG",
+          "title": "Shanghai"
+        },
+        {
+          "src": "assets/films/china/Guangzhou.JPG",
+          "title": "Guangzhou"
+        },
+        {
+          "src": "assets/films/china/hz-1.JPG",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-2.jpg",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-3.jpg",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-4.JPG",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-5.jpg",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-6.jpg",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-7.jpg",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-8.jpg",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-9.JPG",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-10.jpg",
+          "title": "Hanzghou"
+        },
+        {
+          "src": "assets/films/china/hz-11.jpg",
+          "title": "Hanzghou"
         }
       ]
     }
