@@ -7,11 +7,11 @@
       "cover": "assets/films/covers/hk-cover-1.JPEG",
       "photos": [
         {
-          "src": "assets/films/hongkong/nam-cheong-1.JPEG",
+          "src": "assets/films/hongkong/nam-cheong-1.jpeg",
           "title": "Nam Cheong"
         },
         {
-          "src": "assets/films/hongkong/nam-cheong-2.JPEG",
+          "src": "assets/films/hongkong/nam-cheong-2.jpeg",
           "title": "Nam Cheong"
         },
         {
@@ -19,11 +19,11 @@
           "title": "Nam Cheong"
         },
         {
-          "src": "assets/films/hongkong/sai-wan-1.jpg",
+          "src": "assets/films/hongkong/sai-wan-1.JPG",
           "title": "Sai Wan"
         },
         {
-          "src": "assets/films/hongkong/sai-wan-2.jpg",
+          "src": "assets/films/hongkong/sai-wan-2.JPEG",
           "title": "Sai Wan"
         },
         {
@@ -43,15 +43,15 @@
           "title": "Sai Wan"
         },
         {
-          "src": "assets/films/hongkong/sai-wan-7.jpg",
+          "src": "assets/films/hongkong/sai-wan-7.JPG",
           "title": "Sai Wan"
         },
         {
-          "src": "assets/films/hongkong/sai-wan-8.jpg",
+          "src": "assets/films/hongkong/sai-wan-8.JPG",
           "title": "Sai Wan"
         },
         {
-          "src": "assets/films/hongkong/sai-wan-9.jpg",
+          "src": "assets/films/hongkong/sai-wan-9.JPG",
           "title": "Sai Wan"
         },
         {
@@ -63,7 +63,7 @@
           "title": "Sai Wan"
         },
         {
-          "src": "assets/films/hongkong/west-kowloon-1.JPEG",
+          "src": "assets/films/hongkong/west-kowloon-1.jpeg",
           "title": "West Kowloon"
         },
         {
@@ -71,15 +71,15 @@
           "title": "West Kowloon"
         },
         {
-          "src": "assets/films/hongkong/west-kowloon-3.jpg",
+          "src": "assets/films/hongkong/west-kowloon-3.JPG",
           "title": "West Kowloon"
         },
         {
-          "src": "assets/films/hongkong/west-kowloon-4.jpg",
+          "src": "assets/films/hongkong/west-kowloon-4.JPG",
           "title": "West Kowloon"
         },
         {
-          "src": "assets/films/hongkong/west-kowloon-5.jpg",
+          "src": "assets/films/hongkong/west-kowloon-5.JPG",
           "title": "West Kowloon"
         },
         {
@@ -87,43 +87,43 @@
           "title": "Central Market"
         },
         {
-          "src": "assets/films/hongkong/choi-hung-estate-1.jpg",
+          "src": "assets/films/hongkong/choi-hung-estate-1.JPG",
           "title": "Choi Hung Estate"
         },
         {
-          "src": "assets/films/hongkong/hung-hom-1.jpg",
+          "src": "assets/films/hongkong/hung-hom-1.JPG",
           "title": "Hung Hom"
         },
         {
-          "src": "assets/films/hongkong/lamma-island-1.jpg",
+          "src": "assets/films/hongkong/lamma-island-1.JPG",
           "title": "Lamma Island"
         },
         {
-          "src": "assets/films/hongkong/mong-kok-1.jpg",
+          "src": "assets/films/hongkong/mong-kok-1.JPG",
           "title": "Mong Kok"
         },
         {
-          "src": "assets/films/hongkong/phum-viphurit-concert-1.jpg",
+          "src": "assets/films/hongkong/phum-viphurit-concert-1.JPG",
           "title": "Phum Viphurit Concert"
         },
         {
-          "src": "assets/films/hongkong/stanley-1.jpg",
+          "src": "assets/films/hongkong/stanley-1.JPG",
           "title": "Stanley"
         },
         {
-          "src": "assets/films/hongkong/tai-tong-1.jpg",
+          "src": "assets/films/hongkong/tai-tong-1.JPG",
           "title": "Tai Tong"
         },
         {
-          "src": "assets/films/hongkong/admiralty-park-1.jpg",
+          "src": "assets/films/hongkong/admiralty-park-1.JPG",
           "title": "Admiralty Park"
         },
         {
-          "src": "assets/films/hongkong/admiralty-park-2.jpg",
+          "src": "assets/films/hongkong/admiralty-park-2.JPG",
           "title": "Admiralty Park"
         },
         {
-          "src": "assets/films/hongkong/admiralty-park-3.jpg",
+          "src": "assets/films/hongkong/admiralty-park-3.JPG",
           "title": "Admiralty Park"
         },
         {
@@ -139,23 +139,23 @@
           "title": "Disneyland"
         },
         {
-          "src": "assets/films/hongkong/hk-island-1.jpg",
+          "src": "assets/films/hongkong/hk-island-1.JPG",
           "title": "Hong Kong Island"
         },
         {
-          "src": "assets/films/hongkong/hk-island-2.jpg",
+          "src": "assets/films/hongkong/hk-island-2.JPG",
           "title": "Hong Kong Island"
         },
         {
-          "src": "assets/films/hongkong/hk-island-3.jpg",
+          "src": "assets/films/hongkong/hk-island-3.JPG",
           "title": "Hong Kong Island"
         },
         {
-          "src": "assets/films/hongkong/hk-island-4.jpg",
+          "src": "assets/films/hongkong/hk-island-4.JPG",
           "title": "Hong Kong Island"
         },
         {
-          "src": "assets/films/hongkong/hk-island-5.jpg",
+          "src": "assets/films/hongkong/hk-island-5.JPG",
           "title": "Hong Kong Island"
         },
         {
@@ -167,7 +167,7 @@
           "title": "North Point"
         },
         {
-          "src": "assets/films/hongkong/north-2.jpg",
+          "src": "assets/films/hongkong/north-2.JPG",
           "title": "North Point"
         },
         {
@@ -175,7 +175,7 @@
           "title": "Repulse Bay"
         },
         {
-          "src": "assets/films/hongkong/repulse-bay-2.jpg",
+          "src": "assets/films/hongkong/repulse-bay-2.JPG",
           "title": "Repulse Bay"
         },
         {
@@ -187,7 +187,7 @@
           "title": "Tsim Sha Tsui"
         },
         {
-          "src": "assets/films/hongkong/wan-chai-1.jpg",
+          "src": "assets/films/hongkong/wan-chai-1.JPG",
           "title": "Wan Chai"
         },
         {
@@ -327,15 +327,15 @@
       "cover": "assets/films/covers/vn-cover-1.JPEG",
       "photos": [
         {
-          "src": "assets/films/vietnam/hoian-1.JPEG",
+          "src": "assets/films/vietnam/hoian-1.jpeg",
           "title": "Hội An"
         },
         {
-          "src": "assets/films/vietnam/hoian-2.JPEG",
+          "src": "assets/films/vietnam/hoian-2.jpeg",
           "title": "Hội An"
         },
         {
-          "src": "assets/films/vietnam/hoian-3.JPEG",
+          "src": "assets/films/vietnam/hoian-3.jpeg",
           "title": "Hội An"
         },
         {
@@ -375,7 +375,7 @@
           "title": "Hội An"
         },
         {
-          "src": "assets/films/vietnam/hoian-13.JPEG",
+          "src": "assets/films/vietnam/hoian-13.jpeg",
           "title": "Hội An"
         },
         {
@@ -451,15 +451,15 @@
           "title": "Hanoi"
         },
         {
-          "src": "assets/films/vietnam/danang-1.JPEG",
+          "src": "assets/films/vietnam/danang-1.jpeg",
           "title": "Da Nang"
         },
         {
-          "src": "assets/films/vietnam/danang-2.JPEG",
+          "src": "assets/films/vietnam/danang-2.jpeg",
           "title": "Da Nang"
         },
         {
-          "src": "assets/films/vietnam/danang-3.JPEG",
+          "src": "assets/films/vietnam/danang-3.jpeg",
           "title": "Da Nang"
         }
       ]
@@ -539,15 +539,15 @@
       "cover": "assets/films/covers/my-cover.JPEG",
       "photos": [
         {
-          "src": "assets/films/malaysia/kl-1.JPEG",
+          "src": "assets/films/malaysia/kl-1.jpeg",
           "title": "Kuala Lumpur"
         },
         {
-          "src": "assets/films/malaysia/kl-2.JPEG",
+          "src": "assets/films/malaysia/kl-2.jpeg",
           "title": "Kuala Lumpur"
         },
         {
-          "src": "assets/films/malaysia/kl-3.JPEG",
+          "src": "assets/films/malaysia/kl-3.jpeg",
           "title": "Kuala Lumpur"
         },
         {
@@ -575,7 +575,7 @@
           "title": "Kuala Lumpur"
         },
         {
-          "src": "assets/films/malaysia/kl-10.JPEG",
+          "src": "assets/films/malaysia/kl-10.jpeg",
           "title": "Kuala Lumpur"
         },
         {
@@ -695,7 +695,7 @@
           "title": "Shanghai"
         },
         {
-          "src": "assets/films/china/sh-5.JPEG",
+          "src": "assets/films/china/sh-5.jpeg",
           "title": "Shanghai"
         },
         {
