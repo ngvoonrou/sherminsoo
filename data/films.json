@@ -200,7 +200,7 @@
       "key": "japan",
       "name": "Japan",
       "desc": "Quiet frames from Japan — shrines, stations, and mountain air.",
-      "cover": "assets/films/covers/jp-cover.JPG",
+      "cover": "assets/films/covers/jp-cover.jpg",
       "photos": [
         {
           "src": "assets/films/japan/arashiyama-1.jpg",
@@ -468,7 +468,7 @@
       "key": "taiwan",
       "name": "Taiwan",
       "desc": "Wind, cliffs, and coastal trains.",
-      "cover": "assets/films/covers/tw-cover.JPG",
+      "cover": "assets/films/covers/tw-cover.jpg",
       "photos": [
         {
           "src": "assets/films/taiwan/hualien-1.jpg",
