@@ -4,7 +4,7 @@
       "key": "hong-kong",
       "name": "Hong Kong",
       "desc": "Stories from Hong Kong — sea light, tight streets, and that soft night glow.",
-      "cover": "assets/films/covers/hk-cover-1.jpeg",
+      "cover": "assets/films/covers/hk-cover-1.JPEG",
       "photos": [
         {
           "src": "assets/films/hongkong/nam-cheong-1.jpeg",
@@ -200,7 +200,7 @@
       "key": "japan",
       "name": "Japan",
       "desc": "Quiet frames from Japan — shrines, stations, and mountain air.",
-      "cover": "assets/films/covers/jp-cover.jpg",
+      "cover": "assets/films/covers/jp-cover.JPG",
       "photos": [
         {
           "src": "assets/films/japan/arashiyama-1.jpg",
@@ -324,7 +324,7 @@
       "key": "vietnam",
       "name": "Vietnam",
       "desc": "Hội An’s warm evenings and slow river light.",
-      "cover": "assets/films/covers/vn-cover-1.jpeg",
+      "cover": "assets/films/covers/vn-cover-1.JPEG",
       "photos": [
         {
           "src": "assets/films/vietnam/hoian-1.jpeg",
@@ -468,7 +468,7 @@
       "key": "taiwan",
       "name": "Taiwan",
       "desc": "Wind, cliffs, and coastal trains.",
-      "cover": "assets/films/covers/tw-cover.jpg",
+      "cover": "assets/films/covers/tw-cover.JPG",
       "photos": [
         {
           "src": "assets/films/taiwan/hualien-1.jpg",
@@ -536,7 +536,7 @@
       "key": "malaysia",
       "name": "Malaysia",
       "desc": "Malaysia Description...",
-      "cover": "assets/films/covers/my-cover.jpeg",
+      "cover": "assets/films/covers/my-cover.JPEG",
       "photos": [
         {
           "src": "assets/films/malaysia/kl-1.jpeg",
