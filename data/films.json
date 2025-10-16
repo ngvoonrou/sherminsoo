@@ -7,15 +7,15 @@
       "cover": "assets/films/covers/hk-cover-1.JPEG",
       "photos": [
         {
-          "src": "assets/films/hongkong/nam-cheong-1.jpeg",
+          "src": "assets/films/hongkong/nam-cheong-1.JPEG",
           "title": "Nam Cheong"
         },
         {
-          "src": "assets/films/hongkong/nam-cheong-2.jpeg",
+          "src": "assets/films/hongkong/nam-cheong-2.JPEG",
           "title": "Nam Cheong"
         },
         {
-          "src": "assets/films/hongkong/nam-cheong-3.jpeg",
+          "src": "assets/films/hongkong/nam-cheong-3.JPEG",
           "title": "Nam Cheong"
         },
         {
@@ -63,7 +63,7 @@
           "title": "Sai Wan"
         },
         {
-          "src": "assets/films/hongkong/west-kowloon-1.jpeg",
+          "src": "assets/films/hongkong/west-kowloon-1.JPEG",
           "title": "West Kowloon"
         },
         {
@@ -127,7 +127,7 @@
           "title": "Admiralty Park"
         },
         {
-          "src": "assets/films/hongkong/disneyland-1.jpeg",
+          "src": "assets/films/hongkong/disneyland-1.JPEG",
           "title": "Disneyland"
         },
         {
@@ -163,7 +163,7 @@
           "title": "Hong Kong Island"
         },
         {
-          "src": "assets/films/hongkong/north-1.jpeg",
+          "src": "assets/films/hongkong/north-1.JPEG",
           "title": "North Point"
         },
         {
@@ -171,7 +171,7 @@
           "title": "North Point"
         },
         {
-          "src": "assets/films/hongkong/repulse-bay-1.jpeg",
+          "src": "assets/films/hongkong/repulse-bay-1.JPEG",
           "title": "Repulse Bay"
         },
         {
@@ -327,15 +327,15 @@
       "cover": "assets/films/covers/vn-cover-1.JPEG",
       "photos": [
         {
-          "src": "assets/films/vietnam/hoian-1.jpeg",
+          "src": "assets/films/vietnam/hoian-1.JPEG",
           "title": "Hội An"
         },
         {
-          "src": "assets/films/vietnam/hoian-2.jpeg",
+          "src": "assets/films/vietnam/hoian-2.JPEG",
           "title": "Hội An"
         },
         {
-          "src": "assets/films/vietnam/hoian-3.jpeg",
+          "src": "assets/films/vietnam/hoian-3.JPEG",
           "title": "Hội An"
         },
         {
@@ -375,7 +375,7 @@
           "title": "Hội An"
         },
         {
-          "src": "assets/films/vietnam/hoian-13.jpeg",
+          "src": "assets/films/vietnam/hoian-13.JPEG",
           "title": "Hội An"
         },
         {
@@ -451,15 +451,15 @@
           "title": "Hanoi"
         },
         {
-          "src": "assets/films/vietnam/danang-1.jpeg",
+          "src": "assets/films/vietnam/danang-1.JPEG",
           "title": "Da Nang"
         },
         {
-          "src": "assets/films/vietnam/danang-2.jpeg",
+          "src": "assets/films/vietnam/danang-2.JPEG",
           "title": "Da Nang"
         },
         {
-          "src": "assets/films/vietnam/danang-3.jpeg",
+          "src": "assets/films/vietnam/danang-3.JPEG",
           "title": "Da Nang"
         }
       ]
@@ -539,15 +539,15 @@
       "cover": "assets/films/covers/my-cover.JPEG",
       "photos": [
         {
-          "src": "assets/films/malaysia/kl-1.jpeg",
+          "src": "assets/films/malaysia/kl-1.JPEG",
           "title": "Kuala Lumpur"
         },
         {
-          "src": "assets/films/malaysia/kl-2.jpeg",
+          "src": "assets/films/malaysia/kl-2.JPEG",
           "title": "Kuala Lumpur"
         },
         {
-          "src": "assets/films/malaysia/kl-3.jpeg",
+          "src": "assets/films/malaysia/kl-3.JPEG",
           "title": "Kuala Lumpur"
         },
         {
@@ -575,7 +575,7 @@
           "title": "Kuala Lumpur"
         },
         {
-          "src": "assets/films/malaysia/kl-10.jpeg",
+          "src": "assets/films/malaysia/kl-10.JPEG",
           "title": "Kuala Lumpur"
         },
         {
@@ -695,7 +695,7 @@
           "title": "Shanghai"
         },
         {
-          "src": "assets/films/china/sh-5.jpeg",
+          "src": "assets/films/china/sh-5.JPEG",
           "title": "Shanghai"
         },
         {
