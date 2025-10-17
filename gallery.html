@@ -17,12 +17,27 @@
   </head>
 
   <body>
-    <main class="container my-5">
-      <header class="gallery-head">
-        <h2 id="galleryTitle" class="mb-1">Film Gallery</h2>
-        <p id="galleryDesc" class="text-muted"></p>
-      </header>
+    <!-- HERO / HEADER -->
+    <header class="gallery-hero" aria-label="Country cover">
+      <a class="hero-back" href="index.html" aria-label="Back to home"
+        ><span></span>Back</a
+      >
+      <div class="hero-overlay"></div>
+      <div class="hero-inner container">
+        <h1 id="heroTitle" class="hero-title">Film Gallery</h1>
+        <p id="heroDesc" class="hero-desc text-white-50 mb-0"></p>
 
+        <button
+          class="hero-scroll"
+          aria-label="Scroll to gallery"
+          data-scroll="#masonry"
+        >
+          <span class="chev"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="container my-5">
       <!-- Masonry grid -->
       <section
         id="masonry"
@@ -31,6 +46,17 @@
         aria-busy="true"
       ></section>
     </main>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lb" aria-hidden="true">
+      <button class="lb__close" aria-label="Close (Esc)">×</button>
+      <button class="lb__nav lb__prev" aria-label="Previous image">‹</button>
+      <figure class="lb__stage">
+        <img id="lbImg" alt="" />
+        <figcaption id="lbCap"></figcaption>
+      </figure>
+      <button class="lb__nav lb__next" aria-label="Next image">›</button>
+    </div>
 
     <script type="module" src="js/gallery.js"></script>
   </body>
