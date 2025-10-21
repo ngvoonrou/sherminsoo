@@ -108,78 +108,79 @@ export async function renderFilmCovers() {
   const viewport = document.querySelector("#filmViewport");
   const prevBtn = document.querySelector(".fc-btn.prev");
   const nextBtn = document.querySelector(".fc-btn.next");
-
   if (!track || !viewport || !prevBtn || !nextBtn) return;
 
-  // Desktop polish
-  enhanceViewportScroll(viewport);
+  const mql = window.matchMedia("(max-width: 600px)");
 
-  track.setAttribute("aria-busy", "true");
-  try {
-    const res = await fetch("data/films.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("Failed to load films.json");
-    const data = await res.json();
+  // render data once
+  await buildCards();
 
-    const countries = Array.isArray(data?.countries) ? data.countries : [];
-    track.innerHTML = "";
+  // apply behavior once and whenever the breakpoint flips
+  applyMode(mql.matches);
+  mql.addEventListener?.("change", (e) => applyMode(e.matches));
 
-    countries.forEach((c) => {
-      const card = document.createElement("figure");
-      card.className = "film-card";
-      card.setAttribute("role", "listitem");
-      card.setAttribute("aria-label", c.name);
+  async function buildCards() {
+    track.setAttribute("aria-busy", "true");
+    try {
+      const res = await fetch("data/films.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("Failed to load films.json");
+      const data = await res.json();
+      const countries = Array.isArray(data?.countries) ? data.countries : [];
 
-      // Cover image (lazy)
-      const img = document.createElement("img");
-      img.className = "film-card__img";
-      img.src = pickCover(c);
-      img.alt = `${c.name} – film cover`;
-      img.loading = "lazy";
-      img.decoding = "async";
-      img.draggable = false;
-      card.appendChild(img);
+      track.innerHTML = "";
+      countries.forEach((c) => {
+        const card = document.createElement("figure");
+        card.className = "film-card";
+        card.setAttribute("role", "listitem");
+        card.setAttribute("aria-label", c.name);
 
-      // Label
-      const label = document.createElement("figcaption");
-      label.className = "film-card__label";
-      label.innerHTML = `<div class="film-card__name">${c.name}</div>`;
-      card.appendChild(label);
+        const img = document.createElement("img");
+        img.className = "film-card__img";
+        img.src = pickCover(c);
+        img.alt = `${c.name} – film cover`;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.draggable = false;
+        card.appendChild(img);
 
-      // Clickable layer
-      const link = document.createElement("a");
-      link.className = "film-card__link";
-      link.href = `gallery.html?country=${encodeURIComponent(c.key)}`;
-      link.setAttribute("aria-label", `Open ${c.name} gallery`);
-      card.appendChild(link);
+        const label = document.createElement("figcaption");
+        label.className = "film-card__label";
+        label.innerHTML = `<div class="film-card__name">${c.name}</div>`;
+        card.appendChild(label);
 
-      track.appendChild(card);
-    });
+        const link = document.createElement("a");
+        link.className = "film-card__link";
+        link.href = `gallery.html?country=${encodeURIComponent(c.key)}`;
+        link.setAttribute("aria-label", `Open ${c.name} gallery`);
+        card.appendChild(link);
 
-    if (!countries.length) {
-      track.innerHTML = `<div class="text-center" style="opacity:.7;padding:16px">No galleries yet.</div>`;
+        track.appendChild(card);
+      });
+
+      if (!countries.length) {
+        track.innerHTML = `<div class="text-center" style="opacity:.7;padding:16px">No galleries yet.</div>`;
+      }
+    } catch (e) {
+      console.error(e);
+      track.innerHTML = `<div class="text-center" style="opacity:.7;padding:16px">Unable to load film galleries.</div>`;
+    } finally {
+      track.removeAttribute("aria-busy");
     }
+  }
 
-    // Set up buttons/keyboard
-    setupCarouselNav(viewport, track, prevBtn, nextBtn);
+  let teardown = () => {}; // will hold a cleanup for desktop mode
 
-    // Announce "current" slide to assistive tech
-    const slides = () => Array.from(track.querySelectorAll(".film-card"));
-    const io = new IntersectionObserver(
-      (entries) => {
-        const visible = [...entries].sort(
-          (a, b) => b.intersectionRatio - a.intersectionRatio
-        )[0];
-        slides().forEach((s) => s.removeAttribute("aria-current"));
-        if (visible?.target)
-          visible.target.setAttribute("aria-current", "true");
-      },
-      { root: viewport, threshold: [0.3, 0.6, 0.9] }
-    );
-    slides().forEach((el) => io.observe(el));
-  } catch (e) {
-    console.error(e);
-    track.innerHTML = `<div class="text-center" style="opacity:.7;padding:16px">Unable to load film galleries.</div>`;
-  } finally {
-    track.removeAttribute("aria-busy");
+  function applyMode(isMobile) {
+    teardown();
+
+    if (isMobile) {
+      prevBtn.setAttribute("hidden", "");
+      nextBtn.setAttribute("hidden", "");
+      viewport.setAttribute("role", "list"); // add this
+      teardown = () => {};
+    } else {
+      viewport.setAttribute("role", "group"); // keep original on desktop
+      // ...rest unchanged
+    }
   }
 }
